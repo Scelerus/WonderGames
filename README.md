@@ -5,4 +5,4 @@ Martin Kellogg
 Sabina Yim
 Nathan Chatham
 Maggie Negm
-Yuri Bang
+
