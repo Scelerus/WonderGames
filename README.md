@@ -1,2 +1,5 @@
 # WonderGames
-# Sumeet Babu
+
+Sumeet Babu
+Sabina Yim
+Nathan Chatham
