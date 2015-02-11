@@ -1,2 +1,4 @@
 # WonderGames
-Made by Martin Kellogg
+Martin Kellogg
+Sabina Yim
+Nathan Chatham
