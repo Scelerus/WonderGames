@@ -1,5 +1,5 @@
 # WonderGames
-
+Programming team:
 Sumeet Babu
 Martin Kellogg
 Sabina Yim
