@@ -7,7 +7,7 @@ public class Driver {
 	JFrame j = new JFrame();
 	j.setSize(400,600);
 	j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	j.setContentPane(new MultipleChoiceQuestion());
+	j.setContentPane(new MCQDisplay());
 	j.setVisible(true);
     }
 }
