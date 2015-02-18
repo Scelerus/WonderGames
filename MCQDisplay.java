@@ -4,14 +4,17 @@ import javax.swing.JPanel;
 import java.awt.Graphics;
 import javax.swing.JRadioButton;
 import javax.swing.BoxLayout;
+import javax.swing.JLabel;
 
 public class MCQDisplay extends JPanel {
 
 	public MCQDisplay(MCQ mcq) {
-		JRadioButton jrbA = new JRadioButton(mcq.getAnsRight());
-		JRadioButton jrbB = new JRadioButton(mcq.getAnsWrong1());
-		JRadioButton jrbC = new JRadioButton(mcq.getAnsWrong2());
-		JRadioButton jrbD = new JRadioButton(mcq.getAnsWrong3());
+		JLabel jl = new JLabel(mcq.getQ());
+		this.add(jl);
+		JRadioButton jrbA = new JRadioButton(mcq.getansRight());
+		JRadioButton jrbB = new JRadioButton(mcq.getansWrong1());
+		JRadioButton jrbC = new JRadioButton(mcq.getansWrong2());
+		JRadioButton jrbD = new JRadioButton(mcq.getansWrong3());
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		this.add(jrbA);
 		this.add(jrbB);
@@ -22,7 +25,7 @@ public class MCQDisplay extends JPanel {
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawString(mcq.getQ(), 10, 10);
+//		g.drawString(mcq.getQ(), 10, 10);
 
 	}
 }
