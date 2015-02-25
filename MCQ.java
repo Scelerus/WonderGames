@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 
 public class MCQ {
 	
@@ -54,4 +58,18 @@ public class MCQ {
 	public void setansWrong3(String ansWrong3) {
 		this.ansWrong3 = ansWrong3;
 	}
+	
+	public static MCQ MCQInput (String filename) throws FileNotFoundException {
+		Scanner keyboard = new Scanner(new File(filename));
+		String question = keyboard.nextLine();
+		String rightAns = keyboard.nextLine();
+		String wrongAns1 = keyboard.nextLine();
+		String wrongAns2 = keyboard.nextLine();
+		String wrongAns3 = keyboard.nextLine();
+		
+		MCQ MCquestion = new MCQ(question, rightAns, wrongAns1, wrongAns2, wrongAns3);
+		return MCquestion;
+		
+	}
+	
 }

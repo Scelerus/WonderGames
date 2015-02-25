@@ -17,4 +17,5 @@ public class Driver {
 	j.setContentPane(new MCQDisplay(q, r));
 	j.setVisible(true);
     }
+
 }
