@@ -20,8 +20,6 @@ public class Map extends JPanel implements KeyListener{
 	this.r = r;
 	KeyListener listener = new KeyListener();
 	addKeyListener(listener);
-	//KeyListener listener = new MyKeyListener();
-	//addKeyListener(listener);
 	setFocusable(true);
 	//create tiles here. Use mcq_s from the array list that's passed in
 	int rgmcqLength = (int) Math.sqrt(rgmcq.size());
@@ -53,7 +51,21 @@ public class Map extends JPanel implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent e) {
-	if(KeyEvent.getKeyText(e.getKeyCode())
+	String kpText = KeyEvent.getKeyText(e.getKeyCode());
+	if(kpText.equals("Left Arrow")) {
+		chr.setxCoord(chr.getxCoord() - 1);
+	}
+	else if(kpText.equals("Right Arrow")) {
+		chr.setxCoord(chr.getxCoord() + 1);
+	}
+	else if(kpText.equals("Up Arrow")) {
+		chr.setyCoord(getyCoord() + 1);
+	}
+	else if(kpText.equals("Down Arrow")) {
+		chr.setyCoord(getyCoord() - 1);
+	}
     }
-
+    @Override
+    public voide keyReleased(KeyEvent e) {
+    }
 }
