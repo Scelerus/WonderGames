@@ -23,7 +23,7 @@ public class Driver {
 	MCQ q =  rgMCQ.get(r.nextInt(rgMCQ.size()));
 	j.setSize(400,600);
 	j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	j.setContentPane(new MCQDisplay(q, r));
+	j.setContentPane(new Map(rgMCQ, r));
 	j.setVisible(true);
     }
 

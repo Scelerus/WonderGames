@@ -1,4 +1,3 @@
-// @ Martin Kellogg ; 2/11/15
 
 import javax.swing.JPanel;
 
