@@ -9,7 +9,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import java.awt.Graphics;
 
-public class Map extends JPanel {
+public class Map extends JPanel implements KeyListener{
 
     final int TILE_WIDTH = 200;
     final int TILE_HEIGHT = 200;
@@ -18,6 +18,8 @@ public class Map extends JPanel {
     Tile[][] tiles;
     public Map (ArrayList<MCQ> rgmcq, Random r){
 	this.r = r;
+	KeyListener listener = new KeyListener();
+	addKeyListener(listener);
 	//KeyListener listener = new MyKeyListener();
 	//addKeyListener(listener);
 	setFocusable(true);
@@ -47,6 +49,11 @@ public class Map extends JPanel {
 		g.drawImage(img, TILE_WIDTH*i, TILE_HEIGHT*j, null);
 	    }
 	}
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+	if(KeyEvent.getKeyText(e.getKeyCode())
     }
 
 }
