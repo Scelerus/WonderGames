@@ -22,7 +22,7 @@ public class MCQDisplay extends JPanel {
 		JButton jbA = new JButton(mcq.getansRight());
 		jbA.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("You're Right");	
+				System.out.println("You're Right");
 			}
 		});
 		
