@@ -2,7 +2,9 @@
 public class Character {
 	private int xCoord;
 	private int yCoord;
-
+    
+    
+    private String imagePath = "character_image.png";
 
 	public Character() {		
 		xCoord = 0;
@@ -24,6 +26,10 @@ public class Character {
 	public void setyCoord(int xC) {
 		this.xCoord = xC;
 	}
+
+        public String getImagePath(){
+	    return this.imagePath;
+        }
 
 
 
