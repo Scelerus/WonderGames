@@ -1,0 +1,16 @@
+What is 3+5?
+8
+6
+4
+2
+Who was the first president?
+George Washington
+Abraham Lincoln
+Barack Obama
+John Adams
+Which of these is a noun?
+Cake
+Eat
+Funny
+Nice
+#
