@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 
 public class Driver {
 	final static long SEED = 0;
@@ -23,7 +24,7 @@ public class Driver {
 	MCQ q =  rgMCQ.get(r.nextInt(rgMCQ.size()));
 	j.setSize(400,600);
 	j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	j.setContentPane(new Map(rgMCQ, r));
+	j.setContentPane(new JScrollPane(new Map(rgMCQ, r)));
 	j.setVisible(true);
     }
 
