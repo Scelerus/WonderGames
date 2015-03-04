@@ -7,7 +7,8 @@ public class Driver {
 	JFrame j = new JFrame();
 	j.setSize(400,600);
 	j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	j.setContentPane(new MCQDisplay());
+	MCQ mcq = new MCQ("What is 2+2?", "4", "8", "1", "6");
+	j.setContentPane(new MCQDisplay(mcq));
 	j.setVisible(true);
     }
 }
