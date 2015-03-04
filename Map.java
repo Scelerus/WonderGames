@@ -5,6 +5,9 @@ import java.util.Random;
 
 public class Map extends JPanel {
 
+    final int TILE_WIDTH = 200;
+    final int TILE_HEIGHT = 200;
+
     Random r;
     Tile[][] tiles;
     public Map (ArrayList<MCQ> rgmcq, Random r){
@@ -20,6 +23,22 @@ public class Map extends JPanel {
 			
 		}
 	
+    }
+
+
+    @Override
+    protected void paintComponent(Graphics g){
+	for(int i = 0; i < tiles.length; i++){
+	    for(int j = 0; j < tiles[0].length; j++){
+		Tile t = tiles[i][j];
+		BufferedImage img = null;
+		try {
+		    img = ImageIO.read(new File(t.getFilename()));
+		} catch (IOException e) {
+		}
+		g.drawImage(img, TILE_WIDTH*i, TILE_HEIGHT*j, null);
+	    }
+	}
     }
 
 }
