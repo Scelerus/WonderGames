@@ -1,7 +1,8 @@
 import javax.swing.JPanel;
 import java.util.ArrayList;
 import java.util.Random;
-
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
 
 public class Map extends JPanel {
 
@@ -12,6 +13,9 @@ public class Map extends JPanel {
     Tile[][] tiles;
     public Map (ArrayList<MCQ> rgmcq, Random r){
 	this.r = r;
+	KeyListener listener = new MyKeyListener();
+	addKeyListener(listener);
+	setFocusable(true);
 	//create tiles here. Use mcq_s from the array list that's passed in
 	int rgmcqLength = (int) Math.sqrt(rgmcq.size());
 	int rgmcqWidth = rgmcq.size() - rgmcqLength;
@@ -24,7 +28,6 @@ public class Map extends JPanel {
 		}
 	
     }
-
 
     @Override
     protected void paintComponent(Graphics g){
