@@ -4,7 +4,7 @@ import java.util.Random;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 
-public class Map extends JPanel {
+public class Map extends JPanel implements KeyListener{
 
     final int TILE_WIDTH = 200;
     final int TILE_HEIGHT = 200;
@@ -13,7 +13,7 @@ public class Map extends JPanel {
     Tile[][] tiles;
     public Map (ArrayList<MCQ> rgmcq, Random r){
 	this.r = r;
-	KeyListener listener = new MyKeyListener();
+	KeyListener listener = new KeyListener();
 	addKeyListener(listener);
 	setFocusable(true);
 	//create tiles here. Use mcq_s from the array list that's passed in
@@ -42,6 +42,11 @@ public class Map extends JPanel {
 		g.drawImage(img, TILE_WIDTH*i, TILE_HEIGHT*j, null);
 	    }
 	}
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+	if(KeyEvent.getKeyText(e.getKeyCode())
     }
 
 }
