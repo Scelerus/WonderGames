@@ -1,9 +1,10 @@
-public class Tile {
+
+public class Til {
 
 	private MCQ q;
 	private String fileName;
 
-	public Tile(MCQ question, String imageFile) {
+	public Til(MCQ question, String imageFile) {
 		this.q = question;
 		this.fileName = imageFile;
 	}
