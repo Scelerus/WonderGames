@@ -3,6 +3,11 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import java.awt.Graphics;
 
 public class Map extends JPanel {
 
@@ -13,8 +18,8 @@ public class Map extends JPanel {
     Tile[][] tiles;
     public Map (ArrayList<MCQ> rgmcq, Random r){
 	this.r = r;
-	KeyListener listener = new MyKeyListener();
-	addKeyListener(listener);
+	//KeyListener listener = new MyKeyListener();
+	//addKeyListener(listener);
 	setFocusable(true);
 	//create tiles here. Use mcq_s from the array list that's passed in
 	int rgmcqLength = (int) Math.sqrt(rgmcq.size());
@@ -36,7 +41,7 @@ public class Map extends JPanel {
 		Tile t = tiles[i][j];
 		BufferedImage img = null;
 		try {
-		    img = ImageIO.read(new File(t.getFilename()));
+		    img = ImageIO.read(new File(t.getFileName()));
 		} catch (IOException e) {
 		}
 		g.drawImage(img, TILE_WIDTH*i, TILE_HEIGHT*j, null);
