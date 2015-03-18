@@ -23,7 +23,7 @@ public class Til {
 	public void displayQuestion() {
 		JFrame j = new JFrame();
 		j.setSize(400,600);
-		j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		j.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		j.setContentPane(new MCQDisplay(q, r, j));
 		j.setVisible(true);
 	}
