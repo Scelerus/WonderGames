@@ -35,8 +35,6 @@ public class Map extends JPanel implements KeyListener{
 				for (int k = 0; k < 10; k++) {
 					tiles[j][k] = new Til(rgmcq.get(r.nextInt(rgmcq.size())), "tile_image.jpg");
 				}
-				
-			}
 	
     }
 
@@ -68,31 +66,35 @@ public class Map extends JPanel implements KeyListener{
     			}
     			else { 
                 	chr.setxCoord(chr.getxCoord() - 1);
+                	tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
+
                 }
         }
         else if(kpCode == 40) {//Right
                 chr.setxCoord(chr.getxCoord() + 1);
+                tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
         }
         else if(kpCode == 37) {//Up
         		if((chr.getyCoord() - 1) < 0) {
     			}
     			else { 
                 	chr.setyCoord(chr.getyCoord() - 1);
+                	tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
                 }
         }
         else if(kpCode == 39) {//Down
                 chr.setyCoord(chr.getyCoord() + 1);
+                tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
         }
         System.out.println(chr.getxCoord());
         System.out.println(chr.getyCoord());
 
     }
-    
     public void keyReleased(KeyEvent e) {
     	repaint();
     
     }
-    
+
     public void keyTyped(KeyEvent e) {
 
     }
