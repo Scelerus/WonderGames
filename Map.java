@@ -33,7 +33,7 @@ public class Map extends JPanel implements KeyListener{
 		this.tiles = new Til[10][10];
 			for (int j = 0; j < 10; j++) {
 				for (int k = 0; k < 10; k++) {
-					tiles[j][k] = new Til(rgmcq.get(r.nextInt(rgmcq.size())), "tile_image.jpg", r);
+					tiles[j][k] = new Til(rgmcq.get(r.nextInt(rgmcq.size())), "assets/WGGrass.jpg", r);
 				}
 	
     }

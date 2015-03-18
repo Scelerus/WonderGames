@@ -4,7 +4,7 @@ public class Character {
 	private int yCoord;
     
     
-    private String imagePath = "character_image.png";
+    private String imagePath = "assets/WGSpriteP1Front1.png";
 
 	public Character() {		
 		xCoord = 0;
