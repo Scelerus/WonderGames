@@ -9,12 +9,13 @@ import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.BoxLayout;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class MCQDisplay extends JPanel {
 
-	public MCQDisplay(MCQ mcq, Random r) {
+	public MCQDisplay(MCQ mcq, Random r, final JFrame j) {
 		JLabel jl = new JLabel(mcq.getQ());
 		this.add(jl);
 		
@@ -22,6 +23,7 @@ public class MCQDisplay extends JPanel {
 		jbA.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("You're Right");
+				j.dispose();
 			}
 		});
 		

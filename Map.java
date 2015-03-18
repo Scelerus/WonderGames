@@ -32,7 +32,7 @@ public class Map extends JPanel implements KeyListener{
 	this.tiles = new Til[10][10];
 		for (int j = 0; j < 10; j++) {
 			for (int k = 0; k < 10; k++) {
-				tiles[j][k] = new Til(rgmcq.get(r.nextInt(rgmcq.size())), "tile_image.jpg");
+				tiles[j][k] = new Til(rgmcq.get(r.nextInt(rgmcq.size())), "tile_image.jpg", r);
 			}
 			
 		}
@@ -60,31 +60,32 @@ public class Map extends JPanel implements KeyListener{
         
     }
 
-    @Override
     public void keyPressed(KeyEvent e) {
     	int kpCode = e.getKeyCode();
     	System.out.print(kpCode);
     	if(kpCode == 38) { //Left
                 chr.setxCoord(chr.getxCoord() - 1);
                 repaint();
+                tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
         }
         else if(kpCode == 40) {//Right
                 chr.setxCoord(chr.getxCoord() + 1);
                 repaint();
+                tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
         }
         else if(kpCode == 37) {//Up
                 chr.setyCoord(chr.getyCoord() - 1);
                 repaint();
+                tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
         }
         else if(kpCode == 39) {//Down
                 chr.setyCoord(chr.getyCoord() + 1);
                 repaint();
+                tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
         }
     }
-    @Override
     public void keyReleased(KeyEvent e) {
     }
-    @Override
     public void keyTyped(KeyEvent e) {
 
     }
