@@ -62,28 +62,30 @@ public class Map extends JPanel implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent e) {
-	String kpText = KeyEvent.getKeyText(e.getKeyCode());
-	if(kpText.equals("Left Arrow")) {
-		chr.setxCoord(chr.getxCoord() - 1);
-		repaint();
-	}
-	else if(kpText.equals("Right Arrow")) {
-		chr.setxCoord(chr.getxCoord() + 1);
-		repaint();
-	}
-	else if(kpText.equals("Up Arrow")) {
-		chr.setyCoord(chr.getyCoord() + 1);
-		repaint();
-	}
-	else if(kpText.equals("Down Arrow")) {
-		chr.setyCoord(chr.getyCoord() - 1);
-		repaint();
-	}
+    	int kpCode = e.getKeyCode();
+    	System.out.print(kpCode);
+    	if(kpCode == 38) { //Left
+                chr.setxCoord(chr.getxCoord() - 1);
+                repaint();
+        }
+        else if(kpCode == 40) {//Right
+                chr.setxCoord(chr.getxCoord() + 1);
+                repaint();
+        }
+        else if(kpCode == 37) {//Up
+                chr.setyCoord(chr.getyCoord() - 1);
+                repaint();
+        }
+        else if(kpCode == 39) {//Down
+                chr.setyCoord(chr.getyCoord() + 1);
+                repaint();
+        }
     }
     @Override
     public void keyReleased(KeyEvent e) {
     }
     @Override
     public void keyTyped(KeyEvent e) {
+
     }
 }
