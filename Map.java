@@ -33,10 +33,11 @@ public class Map extends JPanel implements KeyListener{
 		this.tiles = new Til[10][10];
 			for (int j = 0; j < 10; j++) {
 				for (int k = 0; k < 10; k++) {
-					tiles[j][k] = new Til(rgmcq.get(r.nextInt(rgmcq.size())), "tile_image.jpg");
+					tiles[j][k] = new Til(rgmcq.get(r.nextInt(rgmcq.size())), "tile_image.jpg", r);
 				}
 	
     }
+}
 
     private BufferedImage getImg(String filename){
 		BufferedImage img = null;
@@ -67,7 +68,6 @@ public class Map extends JPanel implements KeyListener{
     			else { 
                 	chr.setxCoord(chr.getxCoord() - 1);
                 	tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
-
                 }
         }
         else if(kpCode == 40) {//Right
