@@ -67,11 +67,13 @@ public class Map extends JPanel implements KeyListener{
     			}
     			else { 
                 	chr.setxCoord(chr.getxCoord() - 1);
+                   	repaint();
                 	tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
                 }
         }
         else if(kpCode == 40) {//Right
                 chr.setxCoord(chr.getxCoord() + 1);
+                repaint();
                 tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
         }
         else if(kpCode == 37) {//Up
@@ -79,11 +81,13 @@ public class Map extends JPanel implements KeyListener{
     			}
     			else { 
                 	chr.setyCoord(chr.getyCoord() - 1);
+                	repaint();
                 	tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
                 }
         }
         else if(kpCode == 39) {//Down
                 chr.setyCoord(chr.getyCoord() + 1);
+               	repaint();
                 tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
         }
         System.out.println(chr.getxCoord());
@@ -91,7 +95,6 @@ public class Map extends JPanel implements KeyListener{
 
     }
     public void keyReleased(KeyEvent e) {
-    	repaint();
     
     }
 
