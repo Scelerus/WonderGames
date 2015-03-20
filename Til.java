@@ -20,12 +20,13 @@ public class Til {
 		return fileName;
 	}
 	
-	public void displayQuestion() {
+	public JFrame displayQuestion() {
 		JFrame j = new JFrame();
 		j.setSize(400,600);
-		j.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		j.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		j.setContentPane(new MCQDisplay(q, r, j));
 		j.setVisible(true);
+		return j;
 	}
 
 }

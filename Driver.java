@@ -22,7 +22,7 @@ public class Driver {
 		e.printStackTrace();
 	}
 	MCQ q =  rgMCQ.get(r.nextInt(rgMCQ.size()));
-	j.setSize(400,600);
+	j.setSize(1200,800);
 	j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	j.setContentPane(new JScrollPane(new Map(rgMCQ, r)));
 	j.setVisible(true);

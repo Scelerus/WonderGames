@@ -12,19 +12,19 @@ public class Character {
 	}	
 
 	public int getxCoord() {
-		return this.xCoord;
+		return xCoord;
 	}
 
 	public int getyCoord() {
-		return this.yCoord;
+		return yCoord;
 	}
 
-	public void setxCoord(int yC) {
-		this.yCoord = yC;
+	public void setyCoord(int yC) {
+		yCoord = yC;
 	}
 
-	public void setyCoord(int xC) {
-		this.xCoord = xC;
+	public void setxCoord(int xC) {
+		xCoord = xC;
 	}
 
         public String getImagePath(){

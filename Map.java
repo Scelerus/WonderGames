@@ -8,13 +8,21 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import java.awt.Graphics;
+import javax.swing.JFrame;
 
 public class Map extends JPanel implements KeyListener{
 
     final int TILE_WIDTH = 160;
-    final int TILE_HEIGHT = 160;
+    final int TILE_HEIGHT = 120;
+
+    final int MAP_WIDTH = 10;
+    final int MAP_HEIGHT = 10;
+
+    final String TILE_IMAGE = "assets/WGGrass-small.jpg";
 
     Character chr;
+
+    JFrame jf = null;
 
     Random r;
     Til[][] tiles;
@@ -30,10 +38,10 @@ public class Map extends JPanel implements KeyListener{
 		//create tiles here. Use mcq_s from the array list that's passed in
 		int rgmcqLength = (int) Math.sqrt(rgmcq.size());
 		int rgmcqWidth = rgmcq.size() - rgmcqLength;
-		this.tiles = new Til[10][10];
-			for (int j = 0; j < 10; j++) {
-				for (int k = 0; k < 10; k++) {
-					tiles[j][k] = new Til(rgmcq.get(r.nextInt(rgmcq.size())), "assets/WGGrass.jpg", r);
+		this.tiles = new Til[MAP_WIDTH][MAP_HEIGHT];
+			for (int j = 0; j < MAP_WIDTH; j++) {
+				for (int k = 0; k < MAP_HEIGHT; k++) {
+					tiles[j][k] = new Til(rgmcq.get(r.nextInt(rgmcq.size())), TILE_IMAGE, r);
 				}
 	
     }
@@ -61,37 +69,57 @@ public class Map extends JPanel implements KeyListener{
     }
 
     public void keyPressed(KeyEvent e) {
+
+	if(jf != null && jf.isDisplayable()) return;
+
     	int kpCode = e.getKeyCode();
-    	if(kpCode == 38) { //Left
-    			if((chr.getxCoord() - 1) < 0) {
-    			}
-    			else { 
-                	chr.setxCoord(chr.getxCoord() - 1);
-                   	repaint();
-                	tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
-                }
+	int oldx = chr.getxCoord();
+	int oldy = chr.getyCoord();
+	boolean changed = false;
+	int newx = oldx;
+	int newy = oldy;
+    	if(kpCode == KeyEvent.VK_LEFT || kpCode == KeyEvent.VK_A) { //Left
+	    newx--;
+	    changed = true;
         }
-        else if(kpCode == 40) {//Right
-                chr.setxCoord(chr.getxCoord() + 1);
-                repaint();
-                tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
+        else if(kpCode == KeyEvent.VK_RIGHT || kpCode == KeyEvent.VK_D) {//Right
+	    newx++;
+	    changed = true;
+	}
+        else if(kpCode == KeyEvent.VK_UP || kpCode == KeyEvent.VK_W) {//Up
+	    newy--;
+	    changed = true;
         }
-        else if(kpCode == 37) {//Up
-        		if((chr.getyCoord() - 1) < 0) {
-    			}
-    			else { 
-                	chr.setyCoord(chr.getyCoord() - 1);
-                	repaint();
-                	tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
-                }
-        }
-        else if(kpCode == 39) {//Down
-                chr.setyCoord(chr.getyCoord() + 1);
-               	repaint();
-                tiles[chr.getxCoord()][chr.getyCoord()].displayQuestion();
-        }
-        System.out.println(chr.getxCoord());
-        System.out.println(chr.getyCoord());
+        else if(kpCode == KeyEvent.VK_DOWN || kpCode == KeyEvent.VK_S) {//Down
+	    newy++;
+	    changed = true;
+	}
+	if (changed) {
+	    if (newx < 0 || newx >= MAP_WIDTH)
+		newx = oldx;
+	    else if (newy < 0 || newy >= MAP_WIDTH)
+		newy = oldy;
+	    
+	    //TODO: MJK: Figure out why the fuck we need this
+
+	    /*
+	    if (newx - oldx == 2)
+		newx--;
+	    if (oldx - newx == 2)
+		newx++;
+	    if (newy - oldy == 2)
+		newy--;
+	    if (oldy - newy == 2)
+		newy++;
+	    */
+
+	    if(newx != oldx || newy != oldy){
+		chr.setxCoord(newx);
+		chr.setyCoord(newy);
+		jf = tiles[newx][newy].displayQuestion();
+		repaint();	    
+	    }
+	}
 
     }
     public void keyReleased(KeyEvent e) {
