@@ -12,8 +12,9 @@ public class Driver {
 	
     public static void main (String[] args){
 	JFrame j = new JFrame();
-	Random r = new Random(SEED);
-	
+	//Random r = new Random(SEED);
+	Random r = new Random();
+
 	ArrayList<MCQ> rgMCQ = null;
 	try {
 		rgMCQ = MCQ.MCQInput("question.txt");
