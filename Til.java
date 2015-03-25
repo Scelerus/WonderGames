@@ -6,12 +6,11 @@ import javax.swing.JScrollPane;
 
 public class Til {
 
-	private MCQ q;
 	private String fileName;
 	private Random r;
+	private Opp opponent;
 
-	public Til(MCQ question, String imageFile, Random r) {
-		this.q = question;
+	public Til(String imageFile, Random r) {
 		this.fileName = imageFile;
 		this.r = r;
 	}
@@ -21,12 +20,14 @@ public class Til {
 	}
 	
 	public JFrame displayQuestion() {
-		JFrame j = new JFrame();
-		j.setSize(400,600);
-		j.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		j.setContentPane(new MCQDisplay(q, r, j));
-		j.setVisible(true);
-		return j;
+		if (opponent != null)
+			return opponent.askQuestion();
+		else
+			return null;
+	}
+	
+	public Opp getOpp() {
+		return opponent;
 	}
 
 }

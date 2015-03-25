@@ -44,7 +44,7 @@ public class Map extends JPanel implements KeyListener{
 		this.tiles = new Til[MAP_WIDTH][MAP_HEIGHT];
 			for (int j = 0; j < MAP_WIDTH; j++) {
 				for (int k = 0; k < MAP_HEIGHT; k++) {
-					tiles[j][k] = new Til(rgmcq.get(r.nextInt(rgmcq.size())), TILE_IMAGE, r);
+					tiles[j][k] = new Til(TILE_IMAGE, r);
 				}
 				
 			}
@@ -68,7 +68,7 @@ public class Map extends JPanel implements KeyListener{
 			Til t = tiles[i][j];
 			g.drawImage(getImg(t.getFileName()), TILE_WIDTH*i, TILE_HEIGHT*j, null);
 			if (t.getOpp() != null) {
-			    g.drawImg(t.getOpp().getImagePath(), TILE_WIDTH*t.getOpp().getxCoord(), TILE_HEIGHT*t.getOpp().getyCoord(), null);
+			    g.drawImage(getImg(t.getOpp().getImagePath()), TILE_WIDTH*t.getOpp().getxCoord(), TILE_HEIGHT*t.getOpp().getyCoord(), null);
 			}
 		    }
 		}
