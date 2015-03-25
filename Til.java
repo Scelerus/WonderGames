@@ -29,5 +29,9 @@ public class Til {
 	public Opp getOpp() {
 		return opponent;
 	}
+	
+	public void placeOpp(Opp o) {
+		opponent = o;
+	}
 
 }

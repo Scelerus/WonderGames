@@ -49,7 +49,7 @@ public class Map extends JPanel implements KeyListener{
 				
 			}
 			rgopp.add(new Opp(rgmcq.get(0), r, 3, 2));
-			
+			tiles[3][2].placeOpp(rgopp.get(0));
 }
 
     private BufferedImage getImg(String filename){
@@ -68,7 +68,7 @@ public class Map extends JPanel implements KeyListener{
 			Til t = tiles[i][j];
 			g.drawImage(getImg(t.getFileName()), TILE_WIDTH*i, TILE_HEIGHT*j, null);
 			if (t.getOpp() != null) {
-			    g.drawImage(getImg(t.getOpp().getImagePath()), TILE_WIDTH*t.getOpp().getxCoord(), TILE_HEIGHT*t.getOpp().getyCoord(), null);
+			    g.drawImage(getImg("assets/WGSpriteP1Back1.png"), TILE_WIDTH*t.getOpp().getxCoord(), TILE_HEIGHT*t.getOpp().getyCoord(), null);
 			}
 		    }
 		}
