@@ -26,9 +26,12 @@ public class Map extends JPanel implements KeyListener{
 
     Random r;
     Til[][] tiles;
+
+    ArrayList<Opp> rgopp;
     
     public Map (ArrayList<MCQ> rgmcq, Random r){
 		this.r = r;
+		rgopp = new ArrayList<Opp>();
 		addKeyListener(this);
 		setFocusable(true);
 		
@@ -43,8 +46,10 @@ public class Map extends JPanel implements KeyListener{
 				for (int k = 0; k < MAP_HEIGHT; k++) {
 					tiles[j][k] = new Til(rgmcq.get(r.nextInt(rgmcq.size())), TILE_IMAGE, r);
 				}
-	
-    }
+				
+			}
+			rgopp.add(new Opp(rgmcq.get(0), r, 3, 2));
+			
 }
 
     private BufferedImage getImg(String filename){
