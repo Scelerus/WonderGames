@@ -67,6 +67,9 @@ public class Map extends JPanel implements KeyListener{
 		    for(int j = 0; j < tiles[0].length; j++){
 			Til t = tiles[i][j];
 			g.drawImage(getImg(t.getFileName()), TILE_WIDTH*i, TILE_HEIGHT*j, null);
+			if (t.getOpp() != null) {
+			    g.drawImg(t.getOpp().getImagePath(), TILE_WIDTH*t.getOpp().getxCoord(), TILE_HEIGHT*t.getOpp().getyCoord(), null);
+			}
 		    }
 		}
 		g.drawImage(getImg(chr.getImagePath()), TILE_WIDTH*chr.getxCoord(), TILE_HEIGHT*chr.getyCoord(), null); 
