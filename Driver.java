@@ -14,18 +14,9 @@ public class Driver {
 	JFrame j = new JFrame();
 	//Random r = new Random(SEED);
 	Random r = new Random();
-
-	ArrayList<MCQ> rgMCQ = null;
-	try {
-		rgMCQ = MCQ.MCQInput("question.txt");
-	} catch (FileNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	MCQ q =  rgMCQ.get(r.nextInt(rgMCQ.size()));
-	j.setSize(1200,800);
+	j.setSize(600,400);
 	j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	j.setContentPane(new JScrollPane(new Map(rgMCQ, r)));
+	j.setContentPane(new JScrollPane(new Menu(j, r)));
 	j.setVisible(true);
     }
 

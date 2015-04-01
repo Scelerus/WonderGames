@@ -5,8 +5,9 @@ import java.util.Random;
 
 public class Opp extends Character {
    
-    MCQ mcq = null;
-    Random r = null;
+    private MCQ mcq = null;
+    private Random r = null;
+    private String name;
 
     public Opp (MCQ mcq, Random r, int x, int y){
 	this.mcq = mcq;
@@ -14,6 +15,15 @@ public class Opp extends Character {
 	this.setxCoord(x);
 	this.setyCoord(y);
     }
+
+    public Opp (String n){
+	name = n;
+    }
+
+    public String get_name () {
+	return name;
+    }
+
     public JFrame askQuestion(){
 	JFrame j = new JFrame();
 	j.setSize(400,600);
