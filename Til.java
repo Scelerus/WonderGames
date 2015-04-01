@@ -19,9 +19,9 @@ public class Til {
 		return fileName;
 	}
 	
-	public JFrame displayQuestion() {
+	public JFrame displayQuestion(Character player) {
 		if (opponent != null)
-			return opponent.askQuestion();
+			return opponent.askQuestion(player);
 		else
 			return null;
 	}

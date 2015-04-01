@@ -122,7 +122,7 @@ public class Map extends JPanel implements KeyListener{
 	    if(newx != oldx || newy != oldy){
 		chr.setxCoord(newx);
 		chr.setyCoord(newy);
-		jf = tiles[newx][newy].displayQuestion();
+		jf = tiles[newx][newy].displayQuestion(chr);
 		repaint();	    
 	    }
 	}

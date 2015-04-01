@@ -15,13 +15,14 @@ import javax.swing.JOptionPane;
 
 public class MCQDisplay extends JPanel {
 
-    public MCQDisplay(MCQ mcq, Random r, final JFrame j) {
+    public MCQDisplay(MCQ mcq, Random r, final JFrame j, final Character player, final Opp opponent) {
 		JLabel jl = new JLabel(mcq.getQ());
 		this.add(jl);
 		
 		JButton jbA = new JButton(mcq.getansRight());
 		jbA.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
+				opponent.loseHealth();
 				j.dispose();
 			}
 		});
@@ -29,21 +30,24 @@ public class MCQDisplay extends JPanel {
 		JButton jbB = new JButton(mcq.getansWrong1());
 		jbB.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-					
+				player.loseHealth();
+				j.dispose();
 			}
 		});
 		
 		JButton jbC = new JButton(mcq.getansWrong2());
 		jbC.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-					
+				player.loseHealth();
+				j.dispose();
 			}
 		});
 		
 		JButton jbD = new JButton(mcq.getansWrong3());
 		jbD.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-					
+				player.loseHealth();
+				j.dispose();
 			}
 		});
 		
