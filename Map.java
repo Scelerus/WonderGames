@@ -39,8 +39,6 @@ public class Map extends JPanel implements KeyListener{
 		chr = new Character();
 		
 		//create tiles here. Use mcq_s from the array list that's passed in
-		int rgmcqLength = (int) Math.sqrt(rgmcq.size());
-		int rgmcqWidth = rgmcq.size() - rgmcqLength;
 		this.tiles = new Til[MAP_WIDTH][MAP_HEIGHT];
 			for (int j = 0; j < MAP_WIDTH; j++) {
 				for (int k = 0; k < MAP_HEIGHT; k++) {
@@ -48,7 +46,7 @@ public class Map extends JPanel implements KeyListener{
 				}
 				
 			}
-			rgopp.add(new Opp(rgmcq.get(0), r, 3, 2));
+			rgopp.add(new Opp("questions.txt", r, 3, 2));
 			tiles[3][2].placeOpp(rgopp.get(0));
 }
 
