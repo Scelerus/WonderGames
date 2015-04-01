@@ -46,8 +46,10 @@ public class Map extends JPanel implements KeyListener{
 				}
 				
 			}
-			//rgopp.add(new Opp(rgmcq.get(0), r, 3, 2));
-			//tiles[3][2].placeOpp(rgopp.get(0));
+			for(int i = 0; i < rgopp.size(); i++){
+			    Opp opp = rgopp.get(i);
+			    tiles[opp.getxCoord()][opp.getyCoord()].placeOpp(opp);
+			}
 }
 
     private BufferedImage getImg(String filename){

@@ -119,11 +119,11 @@ public class Menu extends JPanel {
 	}
 	
 	if (opp_name.equals("Darth Vader")){
-	    rgopp.add(new Opp("Darth Vader"));
+	    rgopp.add(new Opp("Darth Vader", "question.txt", r, 1, 1));
 	}
 
 	if (opp_name.equals("Homer Simpson")){
-	    rgopp.add(new Opp(opp_name));
+	    rgopp.add(new Opp(opp_name, "question.txt", r, 2, 3));
 	}
     }
     
