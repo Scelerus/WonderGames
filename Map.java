@@ -29,9 +29,9 @@ public class Map extends JPanel implements KeyListener{
 
     ArrayList<Opp> rgopp;
     
-    public Map (ArrayList<MCQ> rgmcq, Random r){
+    public Map (ArrayList<Opp> rgopp_in, Random r){
 		this.r = r;
-		rgopp = new ArrayList<Opp>();
+		rgopp = rgopp_in;
 		addKeyListener(this);
 		setFocusable(true);
 		
@@ -46,8 +46,10 @@ public class Map extends JPanel implements KeyListener{
 				}
 				
 			}
-			rgopp.add(new Opp("questions.txt", r, 3, 2));
-			tiles[3][2].placeOpp(rgopp.get(0));
+			for(int i = 0; i < rgopp.size(); i++){
+			    Opp opp = rgopp.get(i);
+			    tiles[opp.getxCoord()][opp.getyCoord()].placeOpp(opp);
+			}
 }
 
     private BufferedImage getImg(String filename){

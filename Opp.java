@@ -8,10 +8,11 @@ import java.util.Random;
 
 public class Opp extends Character {
    
-	ArrayList<MCQ> rgMCQ;
-    Random r = null;
+    private Random r = null;
+    private String name;
+    private ArrayList<MCQ> rgMCQ;
 
-    public Opp (String questionFile, Random r, int x, int y){
+    public Opp (String name, String questionFile, Random r, int x, int y){
     	try {
     		rgMCQ = MCQ.MCQInput(questionFile);
     	} catch (FileNotFoundException e) {
@@ -19,10 +20,16 @@ public class Opp extends Character {
     		e.printStackTrace();
     	}
 	this.r = r;
+	this.name = name;
 	this.setxCoord(x);
 	this.setyCoord(y);
 	this.setHealth(10);
     }
+
+    public String get_name () {
+    	return name;
+    }
+
     public JFrame askQuestion(Character player){
 	JFrame j = new JFrame();
 	j.setSize(400,600);
