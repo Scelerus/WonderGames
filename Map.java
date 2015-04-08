@@ -9,6 +9,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import java.awt.Graphics;
 import javax.swing.JFrame;
+import java.awt.Color;
 
 public class Map extends JPanel implements KeyListener{
 
@@ -26,6 +27,8 @@ public class Map extends JPanel implements KeyListener{
 
     Random r;
     Til[][] tiles;
+
+    boolean fRepaint = false;
 
     ArrayList<Opp> rgopp;
     
@@ -73,12 +76,22 @@ public class Map extends JPanel implements KeyListener{
 		    }
 		}
 		g.drawImage(getImg(chr.getImagePath()), TILE_WIDTH*chr.getxCoord(), TILE_HEIGHT*chr.getyCoord(), null); 
-        
+		g.setColor(Color.BLACK);
+		g.drawRect(50, 50, chr.getMaxHealth()*2+1, 10);
+		g.setColor(Color.RED);
+		g.fillRect(51, 51, chr.getHealth()*2, 8);
     }
 
     public void keyPressed(KeyEvent e) {
 
-	if(jf != null && jf.isDisplayable()) return;
+	if(jf != null && jf.isDisplayable()){ 
+	    fRepaint = true;
+	    return;
+	}
+	if(fRepaint){
+	    repaint();
+	    fRepaint = false;
+	}
 
     	int kpCode = e.getKeyCode();
 	int oldx = chr.getxCoord();
@@ -125,7 +138,8 @@ public class Map extends JPanel implements KeyListener{
 		chr.setxCoord(newx);
 		chr.setyCoord(newy);
 		jf = tiles[newx][newy].displayQuestion(chr);
-		repaint();	    
+		repaint();
+		fRepaint = true;
 	    }
 	}
 

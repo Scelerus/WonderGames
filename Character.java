@@ -3,7 +3,8 @@ public class Character {
 	private int xCoord;
 	private int yCoord;
 	private int health;
-    
+    private int maxHealth;
+
     
     private String imagePath = "assets/WGSpriteP1Front1.png";
 
@@ -11,6 +12,7 @@ public class Character {
 		xCoord = 0;
 		yCoord = 0;
 		health = 20;
+		maxHealth = health;
 	}	
 
 	public int getxCoord() {
@@ -35,6 +37,10 @@ public class Character {
     
     public int getHealth() {
     	return health;
+    }
+
+    public int getMaxHealth() {
+	return maxHealth;
     }
     
     public void setHealth(int newHealth) {
