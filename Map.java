@@ -26,7 +26,7 @@ public class Map extends JPanel implements KeyListener{
     final int MAP_HEIGHT = 10;
     
 	//Number of rows and columns of tiles to display at a time
-	final int H_TILES_DISPLAYED = 8;
+	final int H_TILES_DISPLAYED = 7;
 	final int V_TILES_DISPLAYED = 6;
 
     final String TILE_IMAGE = "assets/WGGrass-small.jpg";
@@ -100,7 +100,7 @@ public class Map extends JPanel implements KeyListener{
 			rightBound = -leftBound;
 			leftBound = 0;
 		}
-		rightBound += (chr.getxCoord() + (H_TILES_DISPLAYED / 2));
+		rightBound += (chr.getxCoord() + ((H_TILES_DISPLAYED + 1) / 2));
 		if (rightBound > MAP_WIDTH) {
 			leftBound -= (rightBound - MAP_WIDTH);
 			rightBound = MAP_WIDTH;
@@ -110,7 +110,7 @@ public class Map extends JPanel implements KeyListener{
 			bottomBound = -topBound;
 			topBound = 0;
 		}
-		bottomBound += (chr.getyCoord() + (V_TILES_DISPLAYED / 2));
+		bottomBound += (chr.getyCoord() + ((V_TILES_DISPLAYED + 1) / 2));
 		if (bottomBound > MAP_HEIGHT) {
 			topBound -= (bottomBound - MAP_HEIGHT);
 			bottomBound = MAP_HEIGHT;
