@@ -35,6 +35,10 @@ public class Character {
 	    return this.imagePath;
     }
     
+    public void setImagePath(String newImagePath){
+    	this.imagePath = newImagePath;
+    }
+    
     public int getHealth() {
     	return health;
     }
