@@ -62,6 +62,27 @@ public class Menu extends JPanel {
 			}
 	    });
 
+	JCheckBox jcbOpp3 = new JCheckBox("Will Hunting");
+	jcbOpp3.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Will Hunting");
+			}
+	    });
+
+	JCheckBox jcbOpp4 = new JCheckBox("Nick Lytle");
+	jcbOpp4.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Nick Lytle");
+			}
+	    });
+
+	JCheckBox jcbOpp5 = new JCheckBox("Mr. Chang");
+	jcbOpp5.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Mr. Chang");
+			}
+	    });
+
 
 	JButton jbStart = new JButton("Start Game");
 		jbStart.addActionListener(new ActionListener(){
@@ -78,6 +99,10 @@ public class Menu extends JPanel {
 
 		this.add(jcbOpp1);
 		this.add(jcbOpp2);
+		this.add(jcbOpp3);
+		this.add(jcbOpp4);
+		this.add(jcbOpp5);
+
 	ArrayList<JButton> rgjb = new ArrayList();
 	rgjb.add(jbStart);
 		JLabel jl4 = new JLabel("           ");
@@ -119,12 +144,23 @@ public class Menu extends JPanel {
 	}
 	
 	if (opp_name.equals("Darth Vader")){
-	    rgopp.add(new Opp("Darth Vader", "question.txt", r, 1, 1));
+	    rgopp.add(new Opp(opp_name, "assets/question.txt", r, 1, 1));
 	}
 
 	if (opp_name.equals("Homer Simpson")){
-	    rgopp.add(new Opp(opp_name, "question.txt", r, 2, 3));
+	    rgopp.add(new Opp(opp_name, "assets/question.txt", r, 2, 3));
 	}
+
+	if (opp_name.equals("Will Hunting")){
+	    rgopp.add(new Opp(opp_name, "assets/Math6.txt", r, 3, 3));
+	}
+	if (opp_name.equals("Nick Lytle")){
+	    rgopp.add(new Opp(opp_name, "assets/USHistoryTo1865.txt", r, 2, 4));
+	}
+	if (opp_name.equals("Mr. Chang")){
+	    rgopp.add(new Opp(opp_name, "assets/Spanish.txt", r, 5, 3));
+	}
+
     }
     
 }
