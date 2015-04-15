@@ -40,11 +40,11 @@ public class Opp extends Character {
 	    health--;
     }
 
-    public JFrame askQuestion(Character player){
+    public JFrame askQuestion(Character player, Map caller){
 	JFrame j = new JFrame();
 	j.setSize(400,600);
 	j.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-	j.setContentPane(new MCQDisplay(rgMCQ.get(r.nextInt(rgMCQ.size())), r, j, player, this));
+	j.setContentPane(new MCQDisplay(rgMCQ.get(r.nextInt(rgMCQ.size())), r, j, player, this, caller));
 	j.setVisible(true);
 	return j;
     }
