@@ -15,30 +15,67 @@ import javax.swing.JOptionPane;
 
 public class MCQDisplay extends JPanel {
 
-    public MCQDisplay(MCQ mcq, Random r, final JFrame j, final Character player, final Opp opponent) {
+    public MCQDisplay(MCQ mcq, final Random r, final JFrame j, final Character player, final Opp opponent, final Map caller) {
 		JLabel jl = new JLabel("<html>" + mcq.getQ() + "</html>");
 		this.add(jl);
 		
 		JButton jbA = new JButton(mcq.getansRight());
 		jbA.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-				opponent.loseHealth();
-				j.dispose();
+			    
+			    opponent.loseHealth(player.getWeapon().equals("Sword"));
+			    switch (r.nextInt(2)){
+				case 0:
+				    player.setWeapon("Sword");
+				    break;
+				case 1:
+				    player.setWeapon("Shield");
+				    break;
+				}
+			    caller.paintImmediately(0,0,caller.getWidth(), caller.getHeight());
+			    	caller.revalidate();
+			
+    try{
+				Thread.sleep(20);
+			    } catch(Exception e){
+			    }
+			    j.dispose();
+				
 			}
 		});
 		
 		JButton jbB = new JButton(mcq.getansWrong1());
 		jbB.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-				player.loseHealth();
+			
+					
+				player.loseHealth(false);
+				player.setWeapon("");
+				caller.paintImmediately(0,0,caller.getWidth(), caller.getHeight());
+				caller.revalidate();
+			
+				try{
+				Thread.sleep(20);
+			    } catch(Exception e){
+			    }
 				j.dispose();
+				
 			}
 		});
 		
 		JButton jbC = new JButton(mcq.getansWrong2());
 		jbC.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-				player.loseHealth();
+				player.loseHealth(false);
+				player.setWeapon("");       
+				caller.paintImmediately(0,0,caller.getWidth(), caller.getHeight());
+			
+	caller.revalidate();
+							
+try{
+				Thread.sleep(20);
+			    } catch(Exception e){
+			    }
 				j.dispose();
 			}
 		});
@@ -46,7 +83,15 @@ public class MCQDisplay extends JPanel {
 		JButton jbD = new JButton(mcq.getansWrong3());
 		jbD.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-				player.loseHealth();
+				player.loseHealth(false);
+				player.setWeapon("");
+				caller.paintImmediately(0,0,caller.getWidth(), caller.getHeight());
+				caller.revalidate();
+			
+				try{
+				Thread.sleep(20);
+			    } catch(Exception e){
+			    }
 				j.dispose();
 			}
 		});

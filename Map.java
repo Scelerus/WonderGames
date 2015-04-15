@@ -129,6 +129,10 @@ public class Map extends JPanel implements KeyListener{
 		}
 	    }
 
+	    healthBar.setValue(chr.getHealth());
+		healthBar.setString("Health: " + chr.getHealth() + "/" + chr.getMaxHealth());
+		
+
 		this.setBounds();
 		int hOrientation = 0;
 		int vOrientation = 0;
@@ -213,9 +217,7 @@ public class Map extends JPanel implements KeyListener{
 	    if(newx != oldx || newy != oldy){
 		chr.setxCoord(newx);
 		chr.setyCoord(newy);
-		jf = tiles[newx][newy].displayQuestion(chr);
-		healthBar.setValue(chr.getHealth());
-		healthBar.setString("Health: " + chr.getHealth() + "/" + chr.getMaxHealth());
+		jf = tiles[newx][newy].displayQuestion(chr, this);
 		repaint();
 		fRepaint = true;
 	    }
