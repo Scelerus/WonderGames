@@ -31,6 +31,15 @@ public class Opp extends Character {
     	return name;
     }
 
+    //s is whether the character hitting them has a sword!
+    @Override
+    public void loseHealth(boolean s){
+	if(s)
+	    health -= 2;
+	else
+	    health--;
+    }
+
     public JFrame askQuestion(Character player){
 	JFrame j = new JFrame();
 	j.setSize(400,600);

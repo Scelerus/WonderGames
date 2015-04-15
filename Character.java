@@ -2,9 +2,9 @@
 public class Character {
 	private int xCoord;
 	private int yCoord;
-	private int health;
+	protected int health;
     private int maxHealth;
-
+    private String weapon = "";
     
     private String imagePath = "assets/WGSpriteP1Front1.png";
 
@@ -51,10 +51,19 @@ public class Character {
     	health = newHealth;
     }
 
-    public void loseHealth() {
-    	health -= 2;
+    public void loseHealth(boolean s) {
+	if(weapon.equals("Shield"))
+	    health--;
+	else
+	    health -= 2;
     }
-
+	
+	public void setWeapon(String w){
+	    weapon = w;
+	}
+	public String getWeapon(){
+	    return weapon;
+	}
 
 
 }

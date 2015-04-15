@@ -119,6 +119,16 @@ public class Map extends JPanel implements KeyListener{
     
 	@Override
 	protected void paintComponent(Graphics g){
+
+	    //check to see if any opponents have died. If so, remove them from the game
+	    for (int iopp = rgopp.size() - 1; iopp >= 0; iopp--){
+		if(rgopp.get(iopp).getHealth() <= 0){
+		    tiles[rgopp.get(iopp).getxCoord()][rgopp.get(iopp).getyCoord()].placeOpp(null);
+		    rgopp.remove(iopp);
+		    
+		}
+	    }
+
 		this.setBounds();
 		int hOrientation = 0;
 		int vOrientation = 0;
@@ -135,6 +145,8 @@ public class Map extends JPanel implements KeyListener{
 		    hOrientation++;
 		}
 		g.drawImage(getImg(chr.getImagePath()), TILE_WIDTH*(chr.getxCoord() - leftBound), TILE_HEIGHT*(chr.getyCoord() - topBound), null); 
+
+		g.drawString(chr.getWeapon(), 20, 20);
 //		Martin's Health Bar
 //		g.setColor(Color.BLACK);
 //		g.drawRect(50, 50, chr.getMaxHealth()*2+1, 10);
