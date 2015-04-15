@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.TreeMap;
+
 
 public class Character {
 	private int xCoord;
@@ -5,6 +8,7 @@ public class Character {
 	protected int health;
     private int maxHealth;
     private String weapon = "";
+    private TreeMap<String, ArrayList<Integer>> qResults;
     
     private String imagePath = "assets/WGSpriteP1Front1.png";
 
@@ -13,6 +17,7 @@ public class Character {
 		yCoord = 0;
 		health = 20;
 		maxHealth = health;
+		qResults = new TreeMap<String, ArrayList<Integer>>();
 	}	
 
 	public int getxCoord() {
@@ -65,5 +70,21 @@ public class Character {
 	    return weapon;
 	}
 
+    public void updateResults(String oppName, boolean correct) {
+    	//If player has not encountered this opponent, add them to the results.
+    	if (qResults.containsKey(oppName) == false) {
+    		qResults.put(oppName, new ArrayList<Integer>());
+    		qResults.get(oppName).add(0);
+    		qResults.get(oppName).add(0);
+    	}
+    	//qResults[0] = Correct answers
+    	//qResults[1] = Total questions answered of type
+    	//If question is answered correctly, increment correct answers
+    	if (correct == true) {
+    		qResults.get(oppName).set(0, qResults.get(oppName).get(0) + 1);
+    	}
+    	//Always increment total questions answered
+		qResults.get(oppName).set(1, qResults.get(oppName).get(1) + 1);
 
+    }
 }
