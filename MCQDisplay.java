@@ -62,9 +62,11 @@ public class MCQDisplay extends JPanel {
 				    player.setWeapon("Bow");
 				    break;
 				}
+				player.updateResults(opponent.get_name(), true);
 			    caller.paintImmediately(0,0,caller.getWidth(), caller.getHeight());
-			    	caller.revalidate();
-			
+			    caller.revalidate();
+			if (player.health <= 0)
+				caller.game_over();
     try{
 				Thread.sleep(20);
 			    } catch(Exception e){
@@ -81,9 +83,11 @@ public class MCQDisplay extends JPanel {
 					
 				player.loseHealth(false);
 				player.setWeapon("");
+				player.updateResults(opponent.get_name(), false);
 				caller.paintImmediately(0,0,caller.getWidth(), caller.getHeight());
 				caller.revalidate();
-			
+				if (player.health <= 0)
+					caller.game_over();
 				try{
 				Thread.sleep(20);
 			    } catch(Exception e){
@@ -97,10 +101,12 @@ public class MCQDisplay extends JPanel {
 		jbC.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
 				player.loseHealth(false);
-				player.setWeapon("");       
+				player.setWeapon("");     
+				player.updateResults(opponent.get_name(), false);
 				caller.paintImmediately(0,0,caller.getWidth(), caller.getHeight());
-			
-	caller.revalidate();
+				caller.revalidate();
+				if (player.health <= 0)
+					caller.game_over();
 							
 try{
 				Thread.sleep(20);
@@ -115,9 +121,11 @@ try{
 			public void actionPerformed(ActionEvent arg0) {
 				player.loseHealth(false);
 				player.setWeapon("");
+				player.updateResults(opponent.get_name(), false);
 				caller.paintImmediately(0,0,caller.getWidth(), caller.getHeight());
 				caller.revalidate();
-			
+				if (player.health <= 0)
+					caller.game_over();
 				try{
 				Thread.sleep(20);
 			    } catch(Exception e){

@@ -124,7 +124,7 @@ public class Menu extends JPanel {
 	JFrame j = new JFrame("Wonder Games");
 	j.setSize(1200,800);
 	j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	j.setContentPane(new JScrollPane(new Map(rgopp, r)));
+	j.setContentPane(new JScrollPane(new Map(rgopp, r, j)));
 	j.setVisible(true);
 	jf.dispose();
     }
