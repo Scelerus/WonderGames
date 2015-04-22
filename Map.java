@@ -47,8 +47,12 @@ public class Map extends JPanel implements KeyListener{
 
     boolean fRepaint = false;
 
-    ArrayList<Opp> rgopp;
+    private ArrayList<Opp> rgopp;
     
+    public ArrayList<Opp> getrgopp(){
+	return rgopp;
+    }
+
     public Map (ArrayList<Opp> rgopp_in, Random r){
 		this.r = r;
 		rgopp = rgopp_in;
@@ -177,21 +181,25 @@ public class Map extends JPanel implements KeyListener{
 	int newy = oldy;
     	if(kpCode == KeyEvent.VK_LEFT || kpCode == KeyEvent.VK_A) { //Left
     	chr.setImagePath("assets/WGSpriteP1Left3.png");
+	chr.setDir(Character.WEST);
 	    newx--;
 	    changed = true;
         }
         else if(kpCode == KeyEvent.VK_RIGHT || kpCode == KeyEvent.VK_D) {//Right
         chr.setImagePath("assets/WGSpriteP1Right2.png");
+	chr.setDir(Character.EAST);
 	    newx++;
 	    changed = true;
 	}
         else if(kpCode == KeyEvent.VK_UP || kpCode == KeyEvent.VK_W) {//Up
         chr.setImagePath("assets/WGSpriteP1Back1.png");
+	chr.setDir(Character.NORTH);
 	    newy--;
 	    changed = true;
         }
         else if(kpCode == KeyEvent.VK_DOWN || kpCode == KeyEvent.VK_S) {//Down
         chr.setImagePath("assets/WGSpriteP1Front1.png");
+	chr.setDir(Character.SOUTH);
 	    newy++;
 	    changed = true;
 	}

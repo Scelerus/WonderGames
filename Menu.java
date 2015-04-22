@@ -158,7 +158,7 @@ public class Menu extends JPanel {
 	    rgopp.add(new Opp(opp_name, "assets/USHistoryTo1865.txt", r, 2, 4));
 	}
 	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Spanish.txt", r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt", r, 5, 3));
 	}
 
     }

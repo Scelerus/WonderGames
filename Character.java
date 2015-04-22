@@ -10,6 +10,9 @@ public class Character {
     private String weapon = "";
     private TreeMap<String, ArrayList<Integer>> qResults;
     
+    private int dir = 0;
+    public static final int NORTH = 0, SOUTH = 2, EAST = 1, WEST = 3;
+
     private String imagePath = "assets/WGSpriteP1Front1.png";
 
 	public Character() {		
@@ -39,6 +42,16 @@ public class Character {
     public String getImagePath(){
 	    return this.imagePath;
     }
+
+    public void setDir(int k)
+    {
+	if(0 <= k && k <= 3)
+	    dir = k;
+	else
+	    System.out.println(k+" is not a valid direction number"); 
+    }
+
+    public int getDir(){ return dir; }
     
     public void setImagePath(String newImagePath){
     	this.imagePath = newImagePath;
