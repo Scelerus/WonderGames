@@ -87,4 +87,8 @@ public class Character {
 		qResults.get(oppName).set(1, qResults.get(oppName).get(1) + 1);
 
     }
+    
+    public TreeMap<String, ArrayList<Integer>> getResults() {
+    	return qResults;
+    }
 }

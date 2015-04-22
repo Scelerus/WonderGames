@@ -124,7 +124,7 @@ public class Menu extends JPanel {
 	JFrame j = new JFrame("Wonder Games");
 	j.setSize(1200,800);
 	j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	j.setContentPane(new JScrollPane(new Map(rgopp, r)));
+	j.setContentPane(new JScrollPane(new Map(rgopp, r, j)));
 	j.setVisible(true);
 	jf.dispose();
     }
@@ -158,7 +158,7 @@ public class Menu extends JPanel {
 	    rgopp.add(new Opp(opp_name, "assets/USHistoryTo1865.txt", r, 2, 4));
 	}
 	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Spanish.txt", r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt", r, 5, 3));
 	}
 
     }

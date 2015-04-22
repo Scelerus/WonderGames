@@ -1,5 +1,6 @@
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
+import javax.swing.JScrollPane;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -35,6 +36,7 @@ public class Map extends JPanel implements KeyListener{
     JProgressBar healthBar;
 
     JFrame jf = null;
+    JFrame jfBig = null;
 
     Random r;
     Til[][] tiles;
@@ -49,12 +51,12 @@ public class Map extends JPanel implements KeyListener{
 
     ArrayList<Opp> rgopp;
     
-    public Map (ArrayList<Opp> rgopp_in, Random r){
+    public Map (ArrayList<Opp> rgopp_in, Random r, JFrame my_frame){
 		this.r = r;
 		rgopp = rgopp_in;
 		addKeyListener(this);
 		setFocusable(true);
-		
+		jfBig = my_frame;
 		//initialize the character
 		chr = new Character();
 		
@@ -128,6 +130,8 @@ public class Map extends JPanel implements KeyListener{
 		    
 		}
 	    }
+	    if (rgopp.isEmpty())
+	    	this.game_over();
 
 	    healthBar.setValue(chr.getHealth());
 		healthBar.setString("Health: " + chr.getHealth() + "/" + chr.getMaxHealth());
@@ -151,6 +155,7 @@ public class Map extends JPanel implements KeyListener{
 		g.drawImage(getImg(chr.getImagePath()), TILE_WIDTH*(chr.getxCoord() - leftBound), TILE_HEIGHT*(chr.getyCoord() - topBound), null); 
 
 		g.drawString(chr.getWeapon(), 20, 20);
+		
 //		Martin's Health Bar
 //		g.setColor(Color.BLACK);
 //		g.drawRect(50, 50, chr.getMaxHealth()*2+1, 10);
@@ -230,5 +235,17 @@ public class Map extends JPanel implements KeyListener{
 
     public void keyTyped(KeyEvent e) {
 
+    }
+    
+    public void game_over() {
+	JFrame j = new JFrame("Wonder Games");
+	j.setSize(1200,800);
+	j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	if (rgopp.isEmpty())
+		j.setContentPane(new JScrollPane(new EndScreen(j, chr.getResults(), true)));
+	else 
+		j.setContentPane(new JScrollPane(new EndScreen(j, chr.getResults(), false)));
+	j.setVisible(true);
+	jfBig.dispose();
     }
 }
