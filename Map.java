@@ -22,12 +22,16 @@ public class Map extends JPanel implements KeyListener{
     final int TILE_WIDTH = 160;
     final int TILE_HEIGHT = 120;
 
-    final int MAP_WIDTH = 10;
-    final int MAP_HEIGHT = 10;
+    final int MAP_WIDTH = 10; //should be tied to MAP_DATA
+    final int MAP_HEIGHT = 10; // should be tied to MAP_DATA
+
+    final int [] [] MAP_DATA = {{1,2},{0,3}};
     
 	//Number of rows and columns of tiles to display at a time
-	final int H_TILES_DISPLAYED = 7;
-	final int V_TILES_DISPLAYED = 6;
+    final int H_TILES_DISPLAYED = 7;
+    final int V_TILES_DISPLAYED = 6;
+
+    final String[] RG_TIL_IMAGE = {"assets/WGGrass-small.jpg", "assets/WGGrass-small.jpg", "assets/WGGrass-small.jpg", "assets/WGGrass-small.jpg", "assets/WGGrass-small.jpg"};
 
     final String TILE_IMAGE = "assets/WGGrass-small.jpg";
 
@@ -74,7 +78,7 @@ public class Map extends JPanel implements KeyListener{
 		this.tiles = new Til[MAP_WIDTH][MAP_HEIGHT];
 			for (int j = 0; j < MAP_WIDTH; j++) {
 				for (int k = 0; k < MAP_HEIGHT; k++) {
-					tiles[j][k] = new Til(TILE_IMAGE, r);
+				    tiles[j][k] = new Til(RG_TIL_IMAGE[(MAP_DATA[j][k] - 1)], r);
 				}
 				
 			}
