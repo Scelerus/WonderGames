@@ -145,6 +145,11 @@ public class Map extends JPanel implements KeyListener{
 			Til t = tiles[i][j];
 			g.drawImage(getImg(t.getFileName()), TILE_WIDTH*(hOrientation), TILE_HEIGHT*(vOrientation), null);
 			if (t.getOpp() != null) {
+			    g.setColor(Color.BLACK);
+			    g.drawRect(TILE_WIDTH*(t.getOpp().getxCoord() - leftBound), TILE_HEIGHT*(t.getOpp().getyCoord() - topBound), t.getOpp().getMaxHealth(), 5);
+			    g.setColor(Color.RED);
+			    g.fillRect(TILE_WIDTH*(t.getOpp().getxCoord() - leftBound), TILE_HEIGHT*(t.getOpp().getyCoord() - topBound), t.getOpp().getHealth(), 5);
+			    g.setColor(Color.BLACK);
 			    g.drawImage(getImg(t.getOpp().getImagePath()), TILE_WIDTH*(t.getOpp().getxCoord() - leftBound), TILE_HEIGHT*(t.getOpp().getyCoord() - topBound), null);
 			}
 			vOrientation++;

@@ -6,7 +6,7 @@ public class Character {
 	private int xCoord;
 	private int yCoord;
 	protected int health;
-    private int maxHealth;
+    protected int maxHealth;
     private String weapon = "";
     private TreeMap<String, ArrayList<Integer>> qResults;
     
