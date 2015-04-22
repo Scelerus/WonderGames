@@ -25,6 +25,8 @@ public class Opp extends Character {
 	this.setyCoord(y);
 	this.setHealth(10);
 	maxHealth = 10;
+
+	// TODO: MJK : when we have imagaes for the enemies, use them here!
 	this.setImagePath("assets/WGSpriteP1Back1.png");
     }
 
