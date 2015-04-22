@@ -49,9 +49,15 @@ public class Map extends JPanel implements KeyListener{
 
     boolean fRepaint = false;
 
-    ArrayList<Opp> rgopp;
+    private ArrayList<Opp> rgopp;
     
+
+    public ArrayList<Opp> getrgopp(){
+	return rgopp;
+    }
+
     public Map (ArrayList<Opp> rgopp_in, Random r, JFrame my_frame){
+
 		this.r = r;
 		rgopp = rgopp_in;
 		addKeyListener(this);
@@ -145,6 +151,11 @@ public class Map extends JPanel implements KeyListener{
 			Til t = tiles[i][j];
 			g.drawImage(getImg(t.getFileName()), TILE_WIDTH*(hOrientation), TILE_HEIGHT*(vOrientation), null);
 			if (t.getOpp() != null) {
+			    g.setColor(Color.BLACK);
+			    g.drawRect(TILE_WIDTH*(t.getOpp().getxCoord() - leftBound), TILE_HEIGHT*(t.getOpp().getyCoord() - topBound), t.getOpp().getMaxHealth(), 5);
+			    g.setColor(Color.RED);
+			    g.fillRect(TILE_WIDTH*(t.getOpp().getxCoord() - leftBound), TILE_HEIGHT*(t.getOpp().getyCoord() - topBound), t.getOpp().getHealth(), 5);
+			    g.setColor(Color.BLACK);
 			    g.drawImage(getImg(t.getOpp().getImagePath()), TILE_WIDTH*(t.getOpp().getxCoord() - leftBound), TILE_HEIGHT*(t.getOpp().getyCoord() - topBound), null);
 			}
 			vOrientation++;
@@ -182,21 +193,25 @@ public class Map extends JPanel implements KeyListener{
 	int newy = oldy;
     	if(kpCode == KeyEvent.VK_LEFT || kpCode == KeyEvent.VK_A) { //Left
     	chr.setImagePath("assets/WGSpriteP1Left3.png");
+	chr.setDir(Character.WEST);
 	    newx--;
 	    changed = true;
         }
         else if(kpCode == KeyEvent.VK_RIGHT || kpCode == KeyEvent.VK_D) {//Right
         chr.setImagePath("assets/WGSpriteP1Right2.png");
+	chr.setDir(Character.EAST);
 	    newx++;
 	    changed = true;
 	}
         else if(kpCode == KeyEvent.VK_UP || kpCode == KeyEvent.VK_W) {//Up
         chr.setImagePath("assets/WGSpriteP1Back1.png");
+	chr.setDir(Character.NORTH);
 	    newy--;
 	    changed = true;
         }
         else if(kpCode == KeyEvent.VK_DOWN || kpCode == KeyEvent.VK_S) {//Down
         chr.setImagePath("assets/WGSpriteP1Front1.png");
+	chr.setDir(Character.SOUTH);
 	    newy++;
 	    changed = true;
 	}

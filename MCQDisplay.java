@@ -23,13 +23,43 @@ public class MCQDisplay extends JPanel {
 		jbA.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
 			    
-			    opponent.loseHealth(player.getWeapon().equals("Sword"));
-			    switch (r.nextInt(2)){
+			    if(player.getWeapon().equals("Bow")){
+				int x = opponent.getxCoord();
+				int y = opponent.getyCoord();
+				for (Opp opp : caller.getrgopp()){
+				    switch (player.getDir()){
+				    case Character.NORTH:
+					if(opp.getxCoord() == x && opp.getyCoord() <= y)
+					    opp.loseHealth(false);
+					break;
+				    case Character.SOUTH:
+					if(opp.getxCoord() == x && opp.getyCoord() >= y)
+					    opp.loseHealth(false);
+					break;
+				    case Character.EAST:
+					if(opp.getxCoord() >= x && opp.getyCoord() == y)
+					    opp.loseHealth(false);
+					break;
+				    case Character.WEST:
+					if(opp.getxCoord() <= x && opp.getyCoord() == y)
+					    opp.loseHealth(false);
+					break;
+				    
+				    }
+				}
+			    }
+			    else
+				opponent.loseHealth(player.getWeapon().equals("Sword"));
+			    
+			    switch (r.nextInt(3)){
 				case 0:
 				    player.setWeapon("Sword");
 				    break;
 				case 1:
 				    player.setWeapon("Shield");
+				    break;
+			        case 2:
+				    player.setWeapon("Bow");
 				    break;
 				}
 				player.updateResults(opponent.get_name(), true);

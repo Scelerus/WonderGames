@@ -24,6 +24,7 @@ public class Opp extends Character {
 	this.setxCoord(x);
 	this.setyCoord(y);
 	this.setHealth(10);
+	maxHealth = 10;
 	this.setImagePath("assets/WGSpriteP1Back1.png");
     }
 
