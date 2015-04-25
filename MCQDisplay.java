@@ -16,6 +16,9 @@ import javax.swing.JOptionPane;
 public class MCQDisplay extends JPanel {
 
     public MCQDisplay(MCQ mcq, final Random r, final JFrame j, final Character player, final Opp opponent, final Map caller) {
+	JLabel jl1 = new JLabel("<html>" + opponent.get_name() + " asks:" + "</html>");
+		this.add(jl1);
+
 		JLabel jl = new JLabel("<html>" + mcq.getQ() + "</html>");
 		this.add(jl);
 		

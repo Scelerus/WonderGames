@@ -14,7 +14,7 @@ public class Driver {
 	JFrame j = new JFrame();
 	//Random r = new Random(SEED);
 	Random r = new Random();
-	j.setSize(600,400);
+	j.setSize(600,750);
 	j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	j.setContentPane(new JScrollPane(new Menu(j, r)));
 	j.setVisible(true);

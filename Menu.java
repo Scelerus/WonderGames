@@ -47,111 +47,111 @@ public class Menu extends JPanel {
 
 
 
-	JCheckBox jcbOpp1 = new JCheckBox("Darth Vader");
+	JCheckBox jcbOpp1 = new JCheckBox("Pythagoras of Samos (Math 6)");
 	jcbOpp1.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Darth Vader");
+			    add_or_remove_opp("Pythagoras of Samos (Math 6)");
 			}
 	    });
 	
 
-	JCheckBox jcbOpp2 = new JCheckBox("Homer Simpson");
+	JCheckBox jcbOpp2 = new JCheckBox("Hypntia Theon (Math 7)");
 	jcbOpp2.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Homer Simpson");
+			    add_or_remove_opp("Hypntia Theon (Math 7)");
 			}
 	    });
 
-	JCheckBox jcbOpp3 = new JCheckBox("Will Hunting");
+	JCheckBox jcbOpp3 = new JCheckBox("Sophie Germain (Math 8)");
 	jcbOpp3.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Will Hunting");
+			    add_or_remove_opp("Sophie Germain (Math 8)");
 			}
 	    });
 
-	JCheckBox jcbOpp4 = new JCheckBox("Nick Lytle");
+	JCheckBox jcbOpp4 = new JCheckBox("Ada Lovelace (Algebra I)");
 	jcbOpp4.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Nick Lytle");
+			    add_or_remove_opp("Ada Lovelace (Algebra I)");
 			}
 	    });
 
-	JCheckBox jcbOpp5 = new JCheckBox("Mr. Chang");
+	JCheckBox jcbOpp5 = new JCheckBox("Don Quixote (Spanish)");
 	jcbOpp5.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Mr. Chang");
+			    add_or_remove_opp("Don Quixote (Spanish)");
 			}
 	    });
-	JCheckBox jcbOpp6 = new JCheckBox("Mr. Chang");
+	JCheckBox jcbOpp6 = new JCheckBox("Maya Angelou (Reading 6)");
 	jcbOpp6.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Mr. Chang");
+			    add_or_remove_opp("Maya Angelou (Reading 6)");
 			}
 	    });
-	JCheckBox jcbOpp7 = new JCheckBox("Mr. Chang");
+	JCheckBox jcbOpp7 = new JCheckBox("Emily Dickinson (Reading 7)");
 	jcbOpp7.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Mr. Chang");
+			    add_or_remove_opp("Emily Dickinson (Reading 7)");
 			}
 	    });
-	JCheckBox jcbOpp8 = new JCheckBox("Mr. Chang");
+	JCheckBox jcbOpp8 = new JCheckBox("Edgar Allen Poe (Reading 8)");
 	jcbOpp8.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Mr. Chang");
+			    add_or_remove_opp("Edgar Allen Poe (Reading 8)");
 			}
 	    });
-	JCheckBox jcbOpp9 = new JCheckBox("Mr. Chang");
+	JCheckBox jcbOpp9 = new JCheckBox("Jane Austen (Writing 8)");
 	jcbOpp9.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Mr. Chang");
+			    add_or_remove_opp("Jane Austen (Writing 8)");
 			}
 	    });
-	JCheckBox jcbOpp10 = new JCheckBox("Mr. Chang");
+	JCheckBox jcbOpp10 = new JCheckBox("Nikola Tesla (Science 6)");
 	jcbOpp10.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Mr. Chang");
+			    add_or_remove_opp("Nikola Tesla (Science 6)");
 			}
 	    });
-	JCheckBox jcbOpp11 = new JCheckBox("Mr. Chang");
+	JCheckBox jcbOpp11 = new JCheckBox("Jane Goodall (Life Science)");
 	jcbOpp11.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Mr. Chang");
+			    add_or_remove_opp("Jane Goodall (Life Science)");
 			}
 	    });
-	JCheckBox jcbOpp12 = new JCheckBox("Mr. Chang");
+	JCheckBox jcbOpp12 = new JCheckBox("Marie Curie (Physical Science)");
 	jcbOpp12.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Mr. Chang");
+			    add_or_remove_opp("Marie Curie (Physical Science)");
 			}
 	    });
-	JCheckBox jcbOpp13 = new JCheckBox("Mr. Chang");
+	JCheckBox jcbOpp13 = new JCheckBox("Thomas Jefferson (US History to 1865)");
 	jcbOpp13.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Mr. Chang");
+			    add_or_remove_opp("Thomas Jefferson (US History to 1865)");
 			}
 	    });
-	JCheckBox jcbOpp14 = new JCheckBox("Mr. Chang");
+	JCheckBox jcbOpp14 = new JCheckBox("Carlos Slim Helu (Civics and Economics)");
 	jcbOpp14.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Mr. Chang");
+			    add_or_remove_opp("Carlos Slim Helu (Civics and Economics)");
 			}
 	    });
-	JCheckBox jcbOpp15 = new JCheckBox("Mr. Chang");
+	JCheckBox jcbOpp15 = new JCheckBox("Nick Lytle (US History 1865 to present)");
 	jcbOpp15.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Mr. Chang");
+			    add_or_remove_opp("Nick Lytle (US History 1865 to present)");
 			}
 	    });
-	JCheckBox jcbOpp16 = new JCheckBox("Mr. Chang");
+	JCheckBox jcbOpp16 = new JCheckBox("Grace Hopper (Technology)");
 	jcbOpp16.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Mr. Chang");
+			    add_or_remove_opp("Grace Hopper (Technology)");
 			}
 	    });
-	JCheckBox jcbOpp17 = new JCheckBox("Mr. Chang");
+	JCheckBox jcbOpp17 = new JCheckBox("Alex Trebek (Trivia)");
 	jcbOpp17.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Mr. Chang");
+			    add_or_remove_opp("Alex Trebek (Trivia)");
 			}
 	    });
 
@@ -226,60 +226,60 @@ public class Menu extends JPanel {
 	    rgopp.remove(iopp);
 	    return;
 	}
-	
-	if (opp_name.equals("Darth Vader")){
-	    rgopp.add(new Opp(opp_name, "assets/question.txt", "assets/WGSpriteP2", r));
+
+	if (opp_name.equals("Pythagoras of Samos (Math 6)")){
+	    rgopp.add(new Opp(opp_name, "assets/question.txt", "assets/WGSpriteP15", r));
 	}
 
-	if (opp_name.equals("Homer Simpson")){
-	    rgopp.add(new Opp(opp_name, "assets/question.txt","assets/WGSpriteP3",  r));
+	if (opp_name.equals("Hypnatia Theon (Math 7)")){
+	    rgopp.add(new Opp(opp_name, "assets/question.txt","assets/WGSpriteP1",  r));
 	}
 
-	if (opp_name.equals("Will Hunting")){
-	    rgopp.add(new Opp(opp_name, "assets/Math6.txt","assets/WGSpriteP4",  r));
+	if (opp_name.equals("Sophie Germain (Math 8)")){
+	    rgopp.add(new Opp(opp_name, "assets/Math6.txt","assets/WGSpriteP2",  r));
 	}
-	if (opp_name.equals("Nick Lytle")){
-	    rgopp.add(new Opp(opp_name, "assets/USHistoryTo1865.txt","assets/WGSpriteP5",  r));
+	if (opp_name.equals("Ada Lovelace (Algebra I)")){
+	    rgopp.add(new Opp(opp_name, "assets/USHistoryTo1865.txt","assets/WGSpriteP8"));
 	}
-	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r));
+	if (opp_name.equals("Don Quixote (Spanish)")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP20",  r));
 	}
 	
-	if (opp_name.equals("Mr. Chang")){
+	if (opp_name.equals("Maya Angelou (Reading 6)")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP5",  r));
+	}
+	if (opp_name.equals("Emily Dickinson (Reading 7)")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP7",  r));
+	}
+	if (opp_name.equals("Edgar Allen Poe (Reading 8)")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP14",  r));
+	}
+	if (opp_name.equals("Jane Austen (Writing 8)")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP9",  r));
+	}
+	if (opp_name.equals("Nikola Tesla (Science 6)")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP16", r));
+	}
+	if (opp_name.equals("Jane Goodall (Life Science)")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP3", r));
+	}
+	if (opp_name.equals("Marie Curie (Physical Science)")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP4",  r));
+	}
+	if (opp_name.equals("Thomas Jefferson (US History to 1865)")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP21",  r));
+	}
+	if (opp_name.equals("Carlos Slim Helu (Civics and Economics)")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP17",  r));
+	}
+	if (opp_name.equals("Nick Lytle (US History 1865 to present")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP19",  r));
+	}
+	if (opp_name.equals("Grace Hopper (Technology)")){
 	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r));
 	}
-	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r));
-	}
-	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r));
-	}
-	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r));
-	}
-	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r));
-	}
-	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r));
-	}
-	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r));
-	}
-	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r));
-	}
-	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r));
-	}
-	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r));
-	}
-	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r));
-	}
-	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r));
+	if (opp_name.equals("Alex Trebek (Trivia)")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP18",  r));
 	}
 
     }
