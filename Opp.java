@@ -12,7 +12,7 @@ public class Opp extends Character {
     private String name;
     private ArrayList<MCQ> rgMCQ;
 
-    public Opp (String name, String questionFile, String imagepath, Random r, int x, int y)
+    public Opp (String name, String questionFile, String imagepath, Random r)
     {
 	super(imagepath, r);
     	try {
@@ -23,8 +23,8 @@ public class Opp extends Character {
     	}
 	this.r = r;
 	this.name = name;
-	this.setxCoord(x);
-	this.setyCoord(y);
+	this.setxCoord(r.nextInt(20));
+	this.setyCoord(r.nextInt(20));
 	this.setHealth(10);
 	maxHealth = 10;
 
