@@ -14,7 +14,7 @@ public class Opp extends Character {
 
     public Opp (String name, String questionFile, String imagepath, Random r, int x, int y)
     {
-	super(imagepath);
+	super(imagepath, r);
     	try {
     		rgMCQ = MCQ.MCQInput(questionFile);
     	} catch (FileNotFoundException e) {
@@ -45,37 +45,49 @@ public class Opp extends Character {
 	    health--;
     }
 
-    public void move(int MAXX, int MAXY, Til[][] tiles){
+    public void move(int MAXX, int MAXY, Til[][] tiles, int[][] MAP_DATA){
 	if(r.nextInt(10) < 4){
 	    tiles[this.getxCoord()][this.getyCoord()].placeOpp(null);
 	    int d = r.nextInt(4);
+	    int newx = this.getxCoord();
+	    int newy = this.getyCoord();
+	    int oldx = newx;
+	    int oldy = newy;
 	    switch(d){
 	    case Character.NORTH:
-		this.setyCoord(this.getyCoord() - 1);
+		newy = this.getyCoord() - 1;
 		this.setDir(Character.NORTH);
-		if(this.getyCoord() < 0)
-		    this.setyCoord(0);
+		if(newy < 0)
+		    newy = 0;
 		break;
 	    case Character.SOUTH:
-		this.setyCoord(this.getyCoord() + 1);
+		newy = (this.getyCoord() + 1);
 		this.setDir(Character.SOUTH);
-		if(this.getyCoord() > MAXY)
-		    this.setyCoord(MAXY);
+		if(newy > MAXY)
+		    newy = MAXY;
 		break;
 	    case Character.EAST:
-		this.setxCoord(this.getxCoord() + 1);
+		newx = (this.getxCoord() + 1);
 		this.setDir(Character.EAST);
-		if(this.getxCoord() > MAXX)
-		    this.setyCoord(MAXX);
+		if(newx > MAXX)
+		    newx = MAXX;
 		break;
 	    case Character.WEST:
-		this.setxCoord(this.getxCoord() - 1);
+		newx = (this.getxCoord() - 1);
 		this.setDir(Character.WEST);
-		if(this.getxCoord() < 0)
-		    this.setxCoord(0);
+		if(newx < 0)
+		    newx = 0;
 		break;
 		
 	     }
+
+	    if(MAP_DATA[newx][newy] == 2){
+		newx = oldx;
+		newy = oldy;
+	    }
+	    
+	    this.setxCoord(newx);
+	    this.setyCoord(newy);
 	    tiles[this.getxCoord()][this.getyCoord()].placeOpp(this);
 
 	}
@@ -83,7 +95,7 @@ public class Opp extends Character {
 
     public JFrame askQuestion(Character player, Map caller){
 	JFrame j = new JFrame();
-	j.setSize(400,600);
+	j.setSize(600,600);
 	j.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 	j.setContentPane(new MCQDisplay(rgMCQ.get(r.nextInt(rgMCQ.size())), r, j, player, this, caller));
 	j.setVisible(true);

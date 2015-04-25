@@ -82,6 +82,78 @@ public class Menu extends JPanel {
 			    add_or_remove_opp("Mr. Chang");
 			}
 	    });
+	JCheckBox jcbOpp6 = new JCheckBox("Mr. Chang");
+	jcbOpp6.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Mr. Chang");
+			}
+	    });
+	JCheckBox jcbOpp7 = new JCheckBox("Mr. Chang");
+	jcbOpp7.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Mr. Chang");
+			}
+	    });
+	JCheckBox jcbOpp8 = new JCheckBox("Mr. Chang");
+	jcbOpp8.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Mr. Chang");
+			}
+	    });
+	JCheckBox jcbOpp9 = new JCheckBox("Mr. Chang");
+	jcbOpp9.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Mr. Chang");
+			}
+	    });
+	JCheckBox jcbOpp10 = new JCheckBox("Mr. Chang");
+	jcbOpp10.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Mr. Chang");
+			}
+	    });
+	JCheckBox jcbOpp11 = new JCheckBox("Mr. Chang");
+	jcbOpp11.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Mr. Chang");
+			}
+	    });
+	JCheckBox jcbOpp12 = new JCheckBox("Mr. Chang");
+	jcbOpp12.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Mr. Chang");
+			}
+	    });
+	JCheckBox jcbOpp13 = new JCheckBox("Mr. Chang");
+	jcbOpp13.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Mr. Chang");
+			}
+	    });
+	JCheckBox jcbOpp14 = new JCheckBox("Mr. Chang");
+	jcbOpp14.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Mr. Chang");
+			}
+	    });
+	JCheckBox jcbOpp15 = new JCheckBox("Mr. Chang");
+	jcbOpp15.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Mr. Chang");
+			}
+	    });
+	JCheckBox jcbOpp16 = new JCheckBox("Mr. Chang");
+	jcbOpp16.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Mr. Chang");
+			}
+	    });
+	JCheckBox jcbOpp17 = new JCheckBox("Mr. Chang");
+	jcbOpp17.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+			    add_or_remove_opp("Mr. Chang");
+			}
+	    });
 
 
 	JButton jbStart = new JButton("Start Game");
@@ -102,6 +174,18 @@ public class Menu extends JPanel {
 		this.add(jcbOpp3);
 		this.add(jcbOpp4);
 		this.add(jcbOpp5);
+		this.add(jcbOpp6);
+		this.add(jcbOpp7);
+		this.add(jcbOpp8);
+		this.add(jcbOpp9);
+		this.add(jcbOpp10);
+		this.add(jcbOpp11);
+		this.add(jcbOpp12);
+		this.add(jcbOpp13);
+		this.add(jcbOpp14);
+		this.add(jcbOpp15);
+		this.add(jcbOpp16);
+		this.add(jcbOpp17);
 
 	ArrayList<JButton> rgjb = new ArrayList();
 	rgjb.add(jbStart);
@@ -156,6 +240,43 @@ public class Menu extends JPanel {
 	}
 	if (opp_name.equals("Nick Lytle")){
 	    rgopp.add(new Opp(opp_name, "assets/USHistoryTo1865.txt","assets/WGSpriteP5",  r, 2, 4));
+	}
+	if (opp_name.equals("Mr. Chang")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));
+	}
+	
+	if (opp_name.equals("Mr. Chang")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));
+	}
+	if (opp_name.equals("Mr. Chang")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));
+	}
+	if (opp_name.equals("Mr. Chang")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));
+	}
+	if (opp_name.equals("Mr. Chang")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));
+	}
+	if (opp_name.equals("Mr. Chang")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));
+	}
+	if (opp_name.equals("Mr. Chang")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));
+	}
+	if (opp_name.equals("Mr. Chang")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));
+	}
+	if (opp_name.equals("Mr. Chang")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));
+	}
+	if (opp_name.equals("Mr. Chang")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));
+	}
+	if (opp_name.equals("Mr. Chang")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));
+	}
+	if (opp_name.equals("Mr. Chang")){
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));
 	}
 	if (opp_name.equals("Mr. Chang")){
 	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));

@@ -104,7 +104,7 @@ public class Map extends JPanel implements KeyListener{
 		setFocusable(true);
 		jfBig = my_frame;
 		//initialize the character
-		chr = new Character("assets/WGSpriteP1");
+		chr = new Character("assets/WGSpriteP13", r);
 		
 		//Health bar setup
 		this.healthBar = new JProgressBar(0, this.chr.getMaxHealth());
@@ -133,6 +133,7 @@ public class Map extends JPanel implements KeyListener{
 		try {
 		    img = ImageIO.read(new File(filename));
 		} catch (IOException e) {
+		    //System.err.println(filename + " not found");
 		}
 		return img;
 	}
@@ -167,7 +168,7 @@ public class Map extends JPanel implements KeyListener{
     
 	@Override
 	protected void paintComponent(Graphics g){
-
+	    g.clearRect(0,0,1600,1200);
 	    //check to see if any opponents have died. If so, remove them from the game
 	    for (int iopp = rgopp.size() - 1; iopp >= 0; iopp--){
 		if(rgopp.get(iopp).getHealth() <= 0){
@@ -192,21 +193,23 @@ public class Map extends JPanel implements KeyListener{
 			g.drawImage(getImg(t.getFileName()), TILE_WIDTH*(hOrientation), TILE_HEIGHT*(vOrientation), null);
 			if (t.getOpp() != null) {
 			    g.setColor(Color.BLACK);
-			    g.drawRect(TILE_WIDTH*(t.getOpp().getxCoord() - leftBound), TILE_HEIGHT*(t.getOpp().getyCoord() - topBound), t.getOpp().getMaxHealth(), 5);
+			    g.drawRect(TILE_WIDTH*(t.getOpp().getxCoord() - leftBound)+ t.getOpp().xoff, TILE_HEIGHT*(t.getOpp().getyCoord() - topBound)+ t.getOpp().yoff, t.getOpp().getMaxHealth(), 5);
 			    g.setColor(Color.RED);
-			    g.fillRect(TILE_WIDTH*(t.getOpp().getxCoord() - leftBound), TILE_HEIGHT*(t.getOpp().getyCoord() - topBound), t.getOpp().getHealth(), 5);
+			    g.fillRect(TILE_WIDTH*(t.getOpp().getxCoord() - leftBound) + t.getOpp().xoff, TILE_HEIGHT*(t.getOpp().getyCoord() - topBound) + t.getOpp().yoff, t.getOpp().getHealth(), 5);
 			    g.setColor(Color.BLACK);
-			    g.drawImage(getImg(t.getOpp().getImagePath()), TILE_WIDTH*(t.getOpp().getxCoord() - leftBound), TILE_HEIGHT*(t.getOpp().getyCoord() - topBound), null);
+			    g.drawImage(getImg(t.getOpp().getImagePath()), TILE_WIDTH*(t.getOpp().getxCoord() - leftBound) + t.getOpp().xoff, TILE_HEIGHT*(t.getOpp().getyCoord() - topBound) + t.getOpp().yoff, null);
 			}
 			vOrientation++;
 		    }
 		    vOrientation = 0;
 		    hOrientation++;
 		}
-		g.drawImage(getImg(chr.getImagePath()), TILE_WIDTH*(chr.getxCoord() - leftBound), TILE_HEIGHT*(chr.getyCoord() - topBound), null); 
+		g.drawImage(getImg(chr.getImagePath()), TILE_WIDTH*(chr.getxCoord() - leftBound)+chr.xoff, TILE_HEIGHT*(chr.getyCoord() - topBound)+chr.yoff, null); 
 
-		g.drawString(chr.getWeapon(), 20, 20);
-		
+		//g.drawString(chr.getWeapon(), 20, 20);
+		g.drawImage(getImg("assets/WGIcon"+chr.getWeapon()+".png"), 1125, 20, null);
+
+
 //		Martin's Health Bar
 //		g.setColor(Color.BLACK);
 //		g.drawRect(50, 50, chr.getMaxHealth()*2+1, 10);
@@ -257,7 +260,7 @@ public class Map extends JPanel implements KeyListener{
 	    else if (newy < 0 || newy >= MAP_WIDTH)
 		newy = oldy;
 	    for(Opp opp : rgopp)
-		opp.move(MAP_WIDTH, MAP_HEIGHT, tiles);
+		opp.move(MAP_WIDTH, MAP_HEIGHT, tiles, MAP_DATA);
 	    //TODO: MJK: Figure out why the fuck we need this
 
 	    /*
@@ -270,6 +273,11 @@ public class Map extends JPanel implements KeyListener{
 	    if (oldy - newy == 2)
 		newy++;
 	    */
+
+	    if(MAP_DATA[newx][newy] == 2){
+		newx = oldx;
+		newy = oldy;
+	    }
 
 	    if(newx != oldx || newy != oldy){
 		chr.setxCoord(newx);

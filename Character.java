@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.TreeMap;
-
+import java.util.Random;
 
 public class Character {
 	private int xCoord;
@@ -13,11 +13,15 @@ public class Character {
     private int dir = 0;
     public static final int NORTH = 0, SOUTH = 2, EAST = 1, WEST = 3;
 
+    public int xoff, yoff;
+
     private String imagePath = "assets/WGSpriteP1";
 
-	public Character(String imagepath) {		
+    public Character(String imagepath, Random r) {		
 		xCoord = 0;
 		yCoord = 0;
+		xoff = r.nextInt(120);
+		yoff = r.nextInt(40);
 		health = 20;
 		maxHealth = health;
 		imagePath = imagepath;
