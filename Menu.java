@@ -239,7 +239,7 @@ public class Menu extends JPanel {
 	    rgopp.add(new Opp(opp_name, "assets/Math6.txt","assets/WGSpriteP2",  r));
 	}
 	if (opp_name.equals("Ada Lovelace (Algebra I)")){
-	    rgopp.add(new Opp(opp_name, "assets/USHistoryTo1865.txt","assets/WGSpriteP8"));
+	    rgopp.add(new Opp(opp_name, "assets/USHistoryTo1865.txt","assets/WGSpriteP8", r));
 	}
 	if (opp_name.equals("Don Quixote (Spanish)")){
 	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP20",  r));
