@@ -208,8 +208,20 @@ public class Map extends JPanel implements KeyListener{
 
 		//g.drawString(chr.getWeapon(), 20, 20);
 		g.drawImage(getImg("assets/WGIcon"+chr.getWeapon()+".png"), 1125, 20, null);
-
-
+		g.setColor(Color.BLACK);
+		if(chr.getWeapon().equals("Shield")){
+		   g.drawString("Less damage dealt", 1125, 90);
+		   g.drawString("for wrong answers", 1125, 110);
+		
+		}
+		if(chr.getWeapon().equals("Sword")){
+		    g.drawString("More damage dealt", 1125, 90);
+		    g.drawString("for right answers", 1125, 110);
+		}
+		if(chr.getWeapon().equals("Bow")){
+		   g.drawString("Damages all enemies", 1125, 90);
+		   g.drawString("in front of you", 1125, 110);
+		}
 //		Martin's Health Bar
 //		g.setColor(Color.BLACK);
 //		g.drawRect(50, 50, chr.getMaxHealth()*2+1, 10);
