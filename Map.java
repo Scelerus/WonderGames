@@ -124,7 +124,15 @@ public class Map extends JPanel implements KeyListener{
 			}
 			for(int i = 0; i < rgopp.size(); i++){
 			    Opp opp = rgopp.get(i);
-			    tiles[opp.getxCoord()][opp.getyCoord()].placeOpp(opp);
+			    while (tiles[opp.getxCoord()][opp.getyCoord()].getOpp() != opp) {
+			    	if (tiles[opp.getxCoord()][opp.getyCoord()].getOpp() == null && MAP_DATA[opp.getxCoord()][opp.getyCoord()] != 2 
+			    		&& MAP_DATA[opp.getxCoord()][opp.getyCoord()] != 3 )
+			    			tiles[opp.getxCoord()][opp.getyCoord()].placeOpp(opp);
+			    	else {
+			    		opp.setxCoord(r.nextInt(20));
+			    		opp.setyCoord(r.nextInt(20));
+			    	}
+			    }
 			}
 }
 

@@ -226,60 +226,60 @@ public class Menu extends JPanel {
 	    rgopp.remove(iopp);
 	    return;
 	}
-	
+
 	if (opp_name.equals("Pythagoras of Samos (Math 6)")){
-	    rgopp.add(new Opp(opp_name, "assets/question.txt", "assets/WGSpriteP15", r, 1, 1));
+	    rgopp.add(new Opp(opp_name, "assets/question.txt", "assets/WGSpriteP15", r));
 	}
 
 	if (opp_name.equals("Hypnatia Theon (Math 7)")){
-	    rgopp.add(new Opp(opp_name, "assets/question.txt","assets/WGSpriteP1",  r, 2, 3));
+	    rgopp.add(new Opp(opp_name, "assets/question.txt","assets/WGSpriteP1",  r));
 	}
 
 	if (opp_name.equals("Sophie Germain (Math 8)")){
-	    rgopp.add(new Opp(opp_name, "assets/Math6.txt","assets/WGSpriteP2",  r, 3, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Math6.txt","assets/WGSpriteP2",  r));
 	}
 	if (opp_name.equals("Ada Lovelace (Algebra I)")){
-	    rgopp.add(new Opp(opp_name, "assets/USHistoryTo1865.txt","assets/WGSpriteP8",  r, 2, 4));
+	    rgopp.add(new Opp(opp_name, "assets/USHistoryTo1865.txt","assets/WGSpriteP8", r));
 	}
 	if (opp_name.equals("Don Quixote (Spanish)")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP20",  r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP20",  r));
 	}
 	
 	if (opp_name.equals("Maya Angelou (Reading 6)")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP5",  r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP5",  r));
 	}
 	if (opp_name.equals("Emily Dickinson (Reading 7)")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP7",  r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP7",  r));
 	}
 	if (opp_name.equals("Edgar Allen Poe (Reading 8)")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP14",  r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP14",  r));
 	}
 	if (opp_name.equals("Jane Austen (Writing 8)")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP9",  r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP9",  r));
 	}
 	if (opp_name.equals("Nikola Tesla (Science 6)")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP16",  r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP16", r));
 	}
 	if (opp_name.equals("Jane Goodall (Life Science)")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP3",  r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP3", r));
 	}
 	if (opp_name.equals("Marie Curie (Physical Science)")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP4",  r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP4",  r));
 	}
 	if (opp_name.equals("Thomas Jefferson (US History to 1865)")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP21",  r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP21",  r));
 	}
 	if (opp_name.equals("Carlos Slim Helu (Civics and Economics)")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP17",  r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP17",  r));
 	}
 	if (opp_name.equals("Nick Lytle (US History 1865 to present")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP19",  r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP19",  r));
 	}
 	if (opp_name.equals("Grace Hopper (Technology)")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r));
 	}
 	if (opp_name.equals("Alex Trebek (Trivia)")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP18",  r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP18",  r));
 	}
 
     }
