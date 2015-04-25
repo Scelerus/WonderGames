@@ -23,14 +23,50 @@ public class Map extends JPanel implements KeyListener{
     final int TILE_WIDTH = 160;
     final int TILE_HEIGHT = 120;
 
-    final int MAP_WIDTH = 10; //should be tied to MAP_DATA
-    final int MAP_HEIGHT = 10; // should be tied to MAP_DATA
+    final int MAP_WIDTH = 20; //should be tied to MAP_DATA
+    final int MAP_HEIGHT = 20; // should be tied to MAP_DATA
 
-    final int [] [] MAP_DATA = {{1,2},{0,3}};
+    /*    Green = 1
+	  Blue = 2
+	  Black = 3
+	  Brown = 4
+	  Tan = 5
+    */
+
+    final int [] [] MAP_DATA = {
+	{5, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 3, 3, 1, 1, 3},
+	{5, 5, 1, 1, 1, 1, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 3, 1, 3, 1},
+	{5, 5, 1, 1, 3, 1, 1, 3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 3, 1},
+	{5, 1, 4, 4, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 1},
+	{5, 1, 4, 4, 1, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 1},
+	{5, 1, 1, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 4, 4, 1, 1},
+	{5, 5, 1, 4, 4, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 4, 4, 1, 1},
+	{5, 5, 1, 1, 4, 4, 1, 1, 1, 1, 1, 2, 2, 2, 2, 4, 4, 1, 1, 1},
+	{5, 5, 5, 1, 4, 4, 1, 1, 1, 1, 4, 2, 2, 2, 2, 4, 4, 1, 1, 1},
+	{5, 5, 5, 1, 1, 4, 4, 1, 1, 4, 4, 4, 2, 2, 4, 4, 1, 1, 1, 1},
+	{5, 5, 1, 1, 1, 4, 4, 1, 1, 4, 4, 4, 2, 2, 4, 4, 1, 1, 1, 1},
+	{5, 5, 1, 1, 1, 1, 4, 4, 4, 4, 1, 4, 4, 4, 4, 1, 1, 1, 1, 3},
+	{5, 5, 1, 1, 1, 1, 1, 4, 4, 1, 1, 1, 4, 4, 1, 1, 1, 1, 3, 3},
+	{5, 5, 5, 5, 1, 1, 1, 4, 4, 1, 1, 1, 4, 4, 1, 1, 3, 1, 3, 3},
+	{5, 5, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 3},
+	{5, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1},
+	{5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 1, 1, 1, 3, 1, 3, 1},
+	{5, 1, 1, 1, 1, 5, 5, 1, 1, 1, 1, 5, 5, 5, 5, 1, 1, 3, 1, 1},
+	{5, 1, 1, 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 1, 1, 1},
+	{5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}
+    };
+
     
 	//Number of rows and columns of tiles to display at a time
     final int H_TILES_DISPLAYED = 7;
     final int V_TILES_DISPLAYED = 6;
+
+    /*    Green = 1
+	  Blue = 2
+	  Black = 3
+	  Brown = 4
+	  Tan = 5
+    */
 
     final String[] RG_TIL_IMAGE = {"assets/WGGrass-small.jpg", "assets/WGGrass-small.jpg", "assets/WGGrass-small.jpg", "assets/WGGrass-small.jpg", "assets/WGGrass-small.jpg"};
 
