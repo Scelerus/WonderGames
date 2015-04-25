@@ -144,21 +144,21 @@ public class Menu extends JPanel {
 	}
 	
 	if (opp_name.equals("Darth Vader")){
-	    rgopp.add(new Opp(opp_name, "assets/question.txt", r, 1, 1));
+	    rgopp.add(new Opp(opp_name, "assets/question.txt", "assets/WGSpriteP2", r, 1, 1));
 	}
 
 	if (opp_name.equals("Homer Simpson")){
-	    rgopp.add(new Opp(opp_name, "assets/question.txt", r, 2, 3));
+	    rgopp.add(new Opp(opp_name, "assets/question.txt","assets/WGSpriteP3",  r, 2, 3));
 	}
 
 	if (opp_name.equals("Will Hunting")){
-	    rgopp.add(new Opp(opp_name, "assets/Math6.txt", r, 3, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Math6.txt","assets/WGSpriteP4",  r, 3, 3));
 	}
 	if (opp_name.equals("Nick Lytle")){
-	    rgopp.add(new Opp(opp_name, "assets/USHistoryTo1865.txt", r, 2, 4));
+	    rgopp.add(new Opp(opp_name, "assets/USHistoryTo1865.txt","assets/WGSpriteP5",  r, 2, 4));
 	}
 	if (opp_name.equals("Mr. Chang")){
-	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt", r, 5, 3));
+	    rgopp.add(new Opp(opp_name, "assets/Trivia.txt","assets/WGSpriteP6",  r, 5, 3));
 	}
 
     }

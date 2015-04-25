@@ -12,7 +12,9 @@ public class Opp extends Character {
     private String name;
     private ArrayList<MCQ> rgMCQ;
 
-    public Opp (String name, String questionFile, Random r, int x, int y){
+    public Opp (String name, String questionFile, String imagepath, Random r, int x, int y)
+    {
+	super(imagepath);
     	try {
     		rgMCQ = MCQ.MCQInput(questionFile);
     	} catch (FileNotFoundException e) {
@@ -27,7 +29,7 @@ public class Opp extends Character {
 	maxHealth = 10;
 
 	// TODO: MJK : when we have imagaes for the enemies, use them here!
-	this.setImagePath("assets/WGSpriteP1Back1.png");
+	this.setImagePath(imagepath);
     }
 
     public String get_name () {
@@ -41,6 +43,42 @@ public class Opp extends Character {
 	    health -= 2;
 	else
 	    health--;
+    }
+
+    public void move(int MAXX, int MAXY, Til[][] tiles){
+	if(r.nextInt(10) < 4){
+	    tiles[this.getxCoord()][this.getyCoord()].placeOpp(null);
+	    int d = r.nextInt(4);
+	    switch(d){
+	    case Character.NORTH:
+		this.setyCoord(this.getyCoord() - 1);
+		this.setDir(Character.NORTH);
+		if(this.getyCoord() < 0)
+		    this.setyCoord(0);
+		break;
+	    case Character.SOUTH:
+		this.setyCoord(this.getyCoord() + 1);
+		this.setDir(Character.SOUTH);
+		if(this.getyCoord() > MAXY)
+		    this.setyCoord(MAXY);
+		break;
+	    case Character.EAST:
+		this.setxCoord(this.getxCoord() + 1);
+		this.setDir(Character.EAST);
+		if(this.getxCoord() > MAXX)
+		    this.setyCoord(MAXX);
+		break;
+	    case Character.WEST:
+		this.setxCoord(this.getxCoord() - 1);
+		this.setDir(Character.WEST);
+		if(this.getxCoord() < 0)
+		    this.setxCoord(0);
+		break;
+		
+	     }
+	    tiles[this.getxCoord()][this.getyCoord()].placeOpp(this);
+
+	}
     }
 
     public JFrame askQuestion(Character player, Map caller){

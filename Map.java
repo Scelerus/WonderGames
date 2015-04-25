@@ -68,7 +68,7 @@ public class Map extends JPanel implements KeyListener{
 	  Tan = 5
     */
 
-    final String[] RG_TIL_IMAGE = {"assets/WGGrass-small.jpg", "assets/WGGrass-small.jpg", "assets/WGGrass-small.jpg", "assets/WGGrass-small.jpg", "assets/WGGrass-small.jpg"};
+    final String[] RG_TIL_IMAGE = {"assets/WGGrass-small.jpg", "assets/WGWater.png", "assets/WGGrass-small.jpg", "assets/WGGround.png", "assets/WGDesert.png"};
 
     final String TILE_IMAGE = "assets/WGGrass-small.jpg";
 
@@ -104,7 +104,7 @@ public class Map extends JPanel implements KeyListener{
 		setFocusable(true);
 		jfBig = my_frame;
 		//initialize the character
-		chr = new Character();
+		chr = new Character("assets/WGSpriteP1");
 		
 		//Health bar setup
 		this.healthBar = new JProgressBar(0, this.chr.getMaxHealth());
@@ -232,26 +232,22 @@ public class Map extends JPanel implements KeyListener{
 	int newx = oldx;
 	int newy = oldy;
     	if(kpCode == KeyEvent.VK_LEFT || kpCode == KeyEvent.VK_A) { //Left
-    	chr.setImagePath("assets/WGSpriteP1Left3.png");
-	chr.setDir(Character.WEST);
+ 	chr.setDir(Character.WEST);
 	    newx--;
 	    changed = true;
         }
         else if(kpCode == KeyEvent.VK_RIGHT || kpCode == KeyEvent.VK_D) {//Right
-        chr.setImagePath("assets/WGSpriteP1Right2.png");
-	chr.setDir(Character.EAST);
+ 	chr.setDir(Character.EAST);
 	    newx++;
 	    changed = true;
 	}
         else if(kpCode == KeyEvent.VK_UP || kpCode == KeyEvent.VK_W) {//Up
-        chr.setImagePath("assets/WGSpriteP1Back1.png");
-	chr.setDir(Character.NORTH);
+ 	chr.setDir(Character.NORTH);
 	    newy--;
 	    changed = true;
         }
         else if(kpCode == KeyEvent.VK_DOWN || kpCode == KeyEvent.VK_S) {//Down
-        chr.setImagePath("assets/WGSpriteP1Front1.png");
-	chr.setDir(Character.SOUTH);
+ 	chr.setDir(Character.SOUTH);
 	    newy++;
 	    changed = true;
 	}
@@ -260,7 +256,8 @@ public class Map extends JPanel implements KeyListener{
 		newx = oldx;
 	    else if (newy < 0 || newy >= MAP_WIDTH)
 		newy = oldy;
-	    
+	    for(Opp opp : rgopp)
+		opp.move(MAP_WIDTH, MAP_HEIGHT, tiles);
 	    //TODO: MJK: Figure out why the fuck we need this
 
 	    /*

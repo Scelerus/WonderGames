@@ -13,13 +13,14 @@ public class Character {
     private int dir = 0;
     public static final int NORTH = 0, SOUTH = 2, EAST = 1, WEST = 3;
 
-    private String imagePath = "assets/WGSpriteP1Front1.png";
+    private String imagePath = "assets/WGSpriteP1";
 
-	public Character() {		
+	public Character(String imagepath) {		
 		xCoord = 0;
 		yCoord = 0;
 		health = 20;
 		maxHealth = health;
+		imagePath = imagepath;
 		qResults = new TreeMap<String, ArrayList<Integer>>();
 	}	
 
@@ -40,7 +41,23 @@ public class Character {
 	}
 
     public String getImagePath(){
-	    return this.imagePath;
+	switch(dir){
+	case Character.NORTH:
+	    return imagePath+"Back1.png";
+	    
+	case Character.SOUTH:
+	    return imagePath+"Front1.png";
+	    
+	case Character.EAST:
+	    return imagePath+"Right1.png";
+	    
+	case Character.WEST:
+	    return imagePath+"Left1.png";
+	    
+	
+	}
+	return imagePath;
+	    
     }
 
     public void setDir(int k)
