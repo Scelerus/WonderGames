@@ -12,6 +12,11 @@ public class Til {
 
 	public Til(String imageFile, Random r) {
 		this.fileName = imageFile;
+		if(fileName.equals("assets/WGDesert.png") && r.nextInt(10) == 2)
+		    fileName = "assets/WGCacti.png";
+		if(fileName.equals("assets/WGGrass-small.jpg") && r.nextInt(10) == 2)
+		    fileName = "assets/WGRock.png";
+		
 		this.r = r;
 	}
 

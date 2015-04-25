@@ -68,7 +68,7 @@ public class Map extends JPanel implements KeyListener{
 	  Tan = 5
     */
 
-    final String[] RG_TIL_IMAGE = {"assets/WGGrass-small.jpg", "assets/WGWater.png", "assets/WGGrass-small.jpg", "assets/WGGround.png", "assets/WGDesert.png"};
+    final String[] RG_TIL_IMAGE = {"assets/WGGrass-small.jpg", "assets/WGWater.png", "assets/WGMountain.png", "assets/WGTree.png", "assets/WGDesert.png"};
 
     final String TILE_IMAGE = "assets/WGGrass-small.jpg";
 
@@ -274,7 +274,7 @@ public class Map extends JPanel implements KeyListener{
 		newy++;
 	    */
 
-	    if(MAP_DATA[newx][newy] == 2){
+	    if(MAP_DATA[newx][newy] == 2 || MAP_DATA[newx][newy] == 3){
 		newx = oldx;
 		newy = oldy;
 	    }

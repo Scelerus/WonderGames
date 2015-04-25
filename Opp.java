@@ -81,7 +81,7 @@ public class Opp extends Character {
 		
 	     }
 
-	    if(MAP_DATA[newx][newy] == 2){
+	    if(MAP_DATA[newx][newy] == 2 || MAP_DATA[newx][newy] == 3){
 		newx = oldx;
 		newy = oldy;
 	    }
