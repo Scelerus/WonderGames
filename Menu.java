@@ -71,10 +71,10 @@ public class Menu extends JPanel {
 	    });
 	
 
-	JCheckBox jcbOpp2 = new JCheckBox("Hypntia Theon (Math 7)");
+	JCheckBox jcbOpp2 = new JCheckBox("Hypnatia Theon (Math 7)");
 	jcbOpp2.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-			    add_or_remove_opp("Hypntia Theon (Math 7)");
+			    add_or_remove_opp("Hypnatia Theon (Math 7)");
 			}
 	    });
 
@@ -260,7 +260,6 @@ public class Menu extends JPanel {
 	if (opp_name.equals("Don Quixote (Spanish)")){
 	    rgopp.add(new Opp(opp_name, "assets/Spanish.txt","assets/WGSpriteP20",  r));
 	}
-	
 	if (opp_name.equals("Maya Angelou (Reading 6)")){
 	    rgopp.add(new Opp(opp_name, "assets/Reading6.txt","assets/WGSpriteP5",  r));
 	}

@@ -97,6 +97,7 @@ public class Opp extends Character {
 	JFrame j = new JFrame();
 	j.setSize(600,600);
 	j.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+	System.out.println(rgMCQ.size());
 	j.setContentPane(new MCQDisplay(rgMCQ.get(r.nextInt(rgMCQ.size())), r, j, player, this, caller));
 	j.setVisible(true);
 	return j;
