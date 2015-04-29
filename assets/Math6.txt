@@ -23,4 +23,29 @@ What is the value of 3^5?
 81
 125
 15
+Which type of quadrilateral has sides of equal length?
+Rhombus
+Trapezoid
+Rectangle
+Parallelogram
+Which property is exemplified by the statement x * 1/x =1 ?
+Inverse property for multiplication
+Identity property of addition
+Identity property of multiplication
+Multiplicative property of zero
+Which of these values of a data set is the "tipping point"?
+Mean
+Median
+Mode
+Maximum
+What is the ratio of a circle's circunference to its diameter?
+Pi:1
+1:Pi
+1:1
+e:1
+-3 + 4 = ?
+1
+-7
+7
+-1
 #
